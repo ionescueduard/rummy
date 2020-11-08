@@ -24,7 +24,7 @@ public class Card : MonoBehaviour
     Touch touch;
     Vector2 touchPosition;
 
-    private Dictionary<char, short> colorIndex = new Dictionary<char, short>() { {'R', 0}, { 'O', 1 }, { 'B', 2 }, { 'D', 3 } }; 
+    private Dictionary<char, short> colorIndex = new Dictionary<char, short>() { {'R', 0}, { 'O', 2 }, { 'B', 4 }, { 'D', 6 }, { 'J', 8} }; 
 
     private void Awake()
     {
@@ -33,7 +33,10 @@ public class Card : MonoBehaviour
 
     private int getCardIndex()
     {
-        return colorIndex[this.name[0]] * 13 + (int)(this.name[1] - '0') * 13 + Int32.Parse(String.Format("{0}{1}", this.name[3], this.name[4])) - 1;
+        int cardPackNumber = colorIndex[this.name[0]] * 13 + (int)(this.name[1] - '0') * 13;
+        int cardNumber = (this.name[3] == '0' ? this.name[4] - '0' : Int32.Parse(String.Format("{0}{1}", this.name[3], this.name[4])) ) - 1;
+
+        return cardPackNumber + cardNumber;
     }
 
 
