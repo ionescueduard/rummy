@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     static private Card[] cards = new Card[106];
     static private int cardsCurrentIndex = 0;
     static private List<Player> players = new List<Player>();
-    static private int currentPlayer = 0;
+    static private int currentPlayer = 1;
     static private bool playerSwitched = false;
     static private Random rng = new Random();
 

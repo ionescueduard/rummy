@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BoardContainer : MonoBehaviour
 {
-    Collider2D col;
+    Collider2D currentCollider;
     Touch touch;
     Vector2 touchPosition;
 
@@ -13,7 +13,7 @@ public class BoardContainer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        col = this.gameObject.GetComponent<Collider2D>();
+        currentCollider = this.gameObject.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class BoardContainer : MonoBehaviour
             if (touch.phase == TouchPhase.Ended)
             {
                 Collider2D touchedCollider = Physics2D.OverlapPoint(touchPosition);
-                if (col == touchedCollider)
+                if (currentCollider == touchedCollider)
                 {
                     Debug.Log(String.Format("Droped here :{0}.", this.gameObject.name));
                 }

@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
     private void addCardOnBoardAt(int level, int index, Card card)
     {
         cards.Add(card);
-        Debug.Log(String.Format("Card: {0} - x:{1} y:{2} z:{3}", card.gameObject.name, xPositions[index], yLevelPosition[level], 0));
+        //Debug.Log(String.Format("Card: {0} - x:{1} y:{2} z:{3}", card.gameObject.name, xPositions[index], yLevelPosition[level], 0));
         card.transform.position = new Vector2(xPositions[index], yLevelPosition[level]); 
     }
 
