@@ -1,0 +1,20 @@
+1	y: -56    -  x: -812	-> 865	   : 40 pices + 1 = 41
+2	y: -122   -  x: -872	-> 590     : 35 pieces   = total 76
+	
+
+
+min 2 players: 14 + 14 = 28 pieces
+
+total: 26 26 26 26 2 = 104
+
+
+board:
+space 93
+    x: -897   ->  498     : 16 pieces  + 1 special at x:640
+1   y: -292
+2   y: -460   
+
+space 17
+    x: -166   ->  89     : 16 pieces   + 1 special at x:118
+1   y: -54 
+2   y: -85   
