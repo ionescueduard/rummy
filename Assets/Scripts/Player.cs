@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     //static int[] xPositions = { -897, -804, -711, -618, -525, -432, -339, -246, -153, -60, 33, 126, 219, 312, 405, 498 };
     //static int[] yLevelPosition = { -292, -460 };
 
-    static int[] xPositions = { -166, -149, -132, -115, -98, -81, -64, -47, -30, -13, 4, 32, 38, 55, 72, 89 };
+    static int[] xPositions = { -166, -149, -132, -115, -98, -81, -64, -47, -30, -13, 4, 21, 38, 55, 72, 89 };
     static int[] yLevelPosition = { -54, -85 };
 
 
