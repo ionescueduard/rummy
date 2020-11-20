@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Container : MonoBehaviour
+public class Container : MonoBehaviour, IDropHandler
 {
     private Collider2D currentCollider;
     private int xContainer;
@@ -14,6 +15,24 @@ public class Container : MonoBehaviour
     static int[] xPositions = { -166, -149, -132, -115, -98, -81, -64, -47, -30, -13, 4, 21, 38, 55, 72, 89 };
     static int[] yLevelPosition = { -54, -85 };
 
+
+
+    /*--------------------------*/
+    /*--------- Events --------*/
+    /*------------------------*/
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        Debug.Log(String.Format("OnDrop: {0}", eventData.pointerDrag.name));
+        if (eventData.pointerDrag != null)
+        {
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+        }
+    }
+
+    /*--------------------------*/
+    /*------ Events Done ------*/
+    /*------------------------*/
 
 
     private int getContainerIndex(bool onlyContainerNumber = false)
@@ -63,4 +82,6 @@ public class Container : MonoBehaviour
 
         
     }
+
+    
 }
