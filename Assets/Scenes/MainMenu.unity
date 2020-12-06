@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 9101836}
   - component: {fileID: 9101838}
   - component: {fileID: 9101837}
-  - component: {fileID: 9101839}
   m_Layer: 0
   m_Name: B0-03
   m_TagString: Untagged
@@ -249,18 +248,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &9101839
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9101834}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &46544750
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +260,6 @@ GameObject:
   - component: {fileID: 46544752}
   - component: {fileID: 46544754}
   - component: {fileID: 46544753}
-  - component: {fileID: 46544755}
   m_Layer: 0
   m_Name: B1-11
   m_TagString: Untagged
@@ -389,18 +375,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &46544755
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46544750}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &89901461
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +387,6 @@ GameObject:
   - component: {fileID: 89901463}
   - component: {fileID: 89901465}
   - component: {fileID: 89901464}
-  - component: {fileID: 89901466}
   m_Layer: 0
   m_Name: D0-02
   m_TagString: Untagged
@@ -529,18 +502,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &89901466
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89901461}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &104337193
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +514,6 @@ GameObject:
   - component: {fileID: 104337195}
   - component: {fileID: 104337197}
   - component: {fileID: 104337196}
-  - component: {fileID: 104337198}
   m_Layer: 0
   m_Name: D1-10
   m_TagString: Untagged
@@ -669,18 +629,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &104337198
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104337193}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &119955949
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +641,6 @@ GameObject:
   - component: {fileID: 119955951}
   - component: {fileID: 119955953}
   - component: {fileID: 119955952}
-  - component: {fileID: 119955954}
   m_Layer: 0
   m_Name: O0-12
   m_TagString: Untagged
@@ -809,18 +756,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &119955954
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119955949}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &134269197
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +811,6 @@ GameObject:
   - component: {fileID: 152989569}
   - component: {fileID: 152989571}
   - component: {fileID: 152989570}
-  - component: {fileID: 152989572}
   m_Layer: 0
   m_Name: O0-02
   m_TagString: Untagged
@@ -992,18 +926,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &152989572
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152989567}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &153561009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +938,6 @@ GameObject:
   - component: {fileID: 153561011}
   - component: {fileID: 153561013}
   - component: {fileID: 153561012}
-  - component: {fileID: 153561014}
   m_Layer: 0
   m_Name: O1-11
   m_TagString: Untagged
@@ -1132,18 +1053,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &153561014
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153561009}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &159764139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1203,81 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16.909088, y: 23.467796}
   m_EdgeRadius: 0
+--- !u!1 &185436752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185436753}
+  - component: {fileID: 185436755}
+  - component: {fileID: 185436754}
+  m_Layer: 5
+  m_Name: WholeBoard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &185436753
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185436752}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1874488680}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -161, y: -54}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &185436754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185436752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4321f738f5986ac40b0425894b79c145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &185436755
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185436752}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 138.0758, y: -13.30843}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 308.43652, y: 65.313866}
+  m_EdgeRadius: 0
 --- !u!1 &207860436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,7 +1290,6 @@ GameObject:
   - component: {fileID: 207860438}
   - component: {fileID: 207860440}
   - component: {fileID: 207860439}
-  - component: {fileID: 207860441}
   m_Layer: 0
   m_Name: D1-07
   m_TagString: Untagged
@@ -1422,18 +1405,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &207860441
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207860436}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &259374458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,7 +1417,6 @@ GameObject:
   - component: {fileID: 259374462}
   - component: {fileID: 259374460}
   - component: {fileID: 259374461}
-  - component: {fileID: 259374463}
   m_Layer: 0
   m_Name: R0-01
   m_TagString: Untagged
@@ -1562,18 +1532,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &259374463
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259374458}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &264727021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,7 +1544,6 @@ GameObject:
   - component: {fileID: 264727025}
   - component: {fileID: 264727023}
   - component: {fileID: 264727024}
-  - component: {fileID: 264727026}
   m_Layer: 0
   m_Name: R1-11
   m_TagString: Untagged
@@ -1702,18 +1659,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &264727026
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264727021}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &283181106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,7 +1671,6 @@ GameObject:
   - component: {fileID: 283181108}
   - component: {fileID: 283181110}
   - component: {fileID: 283181109}
-  - component: {fileID: 283181111}
   m_Layer: 0
   m_Name: O1-13
   m_TagString: Untagged
@@ -1842,18 +1786,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &283181111
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283181106}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &286649386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,7 +1939,6 @@ GameObject:
   - component: {fileID: 303676399}
   - component: {fileID: 303676401}
   - component: {fileID: 303676400}
-  - component: {fileID: 303676402}
   m_Layer: 0
   m_Name: O1-05
   m_TagString: Untagged
@@ -2123,18 +2054,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &303676402
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303676397}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &308661801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,7 +2066,6 @@ GameObject:
   - component: {fileID: 308661803}
   - component: {fileID: 308661805}
   - component: {fileID: 308661804}
-  - component: {fileID: 308661806}
   m_Layer: 0
   m_Name: O0-01
   m_TagString: Untagged
@@ -2263,18 +2181,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &308661806
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308661801}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &310468534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,7 +2193,6 @@ GameObject:
   - component: {fileID: 310468536}
   - component: {fileID: 310468538}
   - component: {fileID: 310468537}
-  - component: {fileID: 310468539}
   m_Layer: 0
   m_Name: O1-07
   m_TagString: Untagged
@@ -2403,18 +2308,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &310468539
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310468534}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &334583433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,7 +2401,6 @@ GameObject:
   - component: {fileID: 358437782}
   - component: {fileID: 358437780}
   - component: {fileID: 358437781}
-  - component: {fileID: 358437783}
   m_Layer: 0
   m_Name: R0-02
   m_TagString: Untagged
@@ -2624,18 +2516,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &358437783
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358437778}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &358816279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,7 +2528,6 @@ GameObject:
   - component: {fileID: 358816283}
   - component: {fileID: 358816281}
   - component: {fileID: 358816282}
-  - component: {fileID: 358816284}
   m_Layer: 0
   m_Name: R1-06
   m_TagString: Untagged
@@ -2764,18 +2643,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &358816284
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358816279}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &371140351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,7 +2655,6 @@ GameObject:
   - component: {fileID: 371140353}
   - component: {fileID: 371140355}
   - component: {fileID: 371140354}
-  - component: {fileID: 371140356}
   m_Layer: 0
   m_Name: D1-08
   m_TagString: Untagged
@@ -2904,18 +2770,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &371140356
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371140351}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &381278170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,7 +2782,6 @@ GameObject:
   - component: {fileID: 381278172}
   - component: {fileID: 381278174}
   - component: {fileID: 381278173}
-  - component: {fileID: 381278175}
   m_Layer: 0
   m_Name: O1-10
   m_TagString: Untagged
@@ -3044,18 +2897,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &381278175
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381278170}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &382099712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,7 +2909,6 @@ GameObject:
   - component: {fileID: 382099714}
   - component: {fileID: 382099716}
   - component: {fileID: 382099715}
-  - component: {fileID: 382099717}
   m_Layer: 0
   m_Name: O0-10
   m_TagString: Untagged
@@ -3184,18 +3024,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &382099717
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382099712}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &385158868
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,7 +3111,6 @@ GameObject:
   - component: {fileID: 390182305}
   - component: {fileID: 390182307}
   - component: {fileID: 390182306}
-  - component: {fileID: 390182308}
   m_Layer: 0
   m_Name: B0-02
   m_TagString: Untagged
@@ -3399,18 +3226,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &390182308
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390182303}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &407312199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,7 +3238,6 @@ GameObject:
   - component: {fileID: 407312203}
   - component: {fileID: 407312201}
   - component: {fileID: 407312202}
-  - component: {fileID: 407312204}
   m_Layer: 0
   m_Name: R1-13
   m_TagString: Untagged
@@ -3539,18 +3353,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &407312204
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407312199}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &410837026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,7 +3365,6 @@ GameObject:
   - component: {fileID: 410837030}
   - component: {fileID: 410837028}
   - component: {fileID: 410837029}
-  - component: {fileID: 410837031}
   m_Layer: 0
   m_Name: R0-08
   m_TagString: Untagged
@@ -3679,18 +3480,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &410837031
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410837026}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &453538487
 GameObject:
   m_ObjectHideFlags: 0
@@ -3784,7 +3573,6 @@ GameObject:
   - component: {fileID: 462463130}
   - component: {fileID: 462463132}
   - component: {fileID: 462463131}
-  - component: {fileID: 462463133}
   m_Layer: 0
   m_Name: J0-01
   m_TagString: Untagged
@@ -3900,18 +3688,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &462463133
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462463128}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &469494589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3924,7 +3700,6 @@ GameObject:
   - component: {fileID: 469494591}
   - component: {fileID: 469494593}
   - component: {fileID: 469494592}
-  - component: {fileID: 469494594}
   m_Layer: 0
   m_Name: O0-11
   m_TagString: Untagged
@@ -4040,18 +3815,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &469494594
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469494589}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &479265830
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,7 +3902,6 @@ GameObject:
   - component: {fileID: 480736000}
   - component: {fileID: 480736002}
   - component: {fileID: 480736001}
-  - component: {fileID: 480736003}
   m_Layer: 0
   m_Name: D0-13
   m_TagString: Untagged
@@ -4255,18 +4017,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &480736003
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480735998}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &503075203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,7 +4029,6 @@ GameObject:
   - component: {fileID: 503075205}
   - component: {fileID: 503075207}
   - component: {fileID: 503075206}
-  - component: {fileID: 503075208}
   m_Layer: 0
   m_Name: B0-12
   m_TagString: Untagged
@@ -4395,18 +4144,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &503075208
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503075203}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &516424762
 GameObject:
   m_ObjectHideFlags: 0
@@ -4419,7 +4156,6 @@ GameObject:
   - component: {fileID: 516424766}
   - component: {fileID: 516424764}
   - component: {fileID: 516424765}
-  - component: {fileID: 516424767}
   m_Layer: 0
   m_Name: R0-07
   m_TagString: Untagged
@@ -4535,18 +4271,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &516424767
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516424762}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &517798780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4559,7 +4283,6 @@ GameObject:
   - component: {fileID: 517798782}
   - component: {fileID: 517798784}
   - component: {fileID: 517798783}
-  - component: {fileID: 517798785}
   m_Layer: 0
   m_Name: B0-11
   m_TagString: Untagged
@@ -4675,18 +4398,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &517798785
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517798780}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &519631050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4699,7 +4410,6 @@ GameObject:
   - component: {fileID: 519631054}
   - component: {fileID: 519631052}
   - component: {fileID: 519631053}
-  - component: {fileID: 519631055}
   m_Layer: 0
   m_Name: R0-10
   m_TagString: Untagged
@@ -4815,18 +4525,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &519631055
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519631050}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &519636128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4839,7 +4537,6 @@ GameObject:
   - component: {fileID: 519636130}
   - component: {fileID: 519636132}
   - component: {fileID: 519636131}
-  - component: {fileID: 519636133}
   m_Layer: 0
   m_Name: J0-02
   m_TagString: Untagged
@@ -4955,18 +4652,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &519636133
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519636128}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &531260460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4979,7 +4664,6 @@ GameObject:
   - component: {fileID: 531260464}
   - component: {fileID: 531260462}
   - component: {fileID: 531260463}
-  - component: {fileID: 531260465}
   m_Layer: 0
   m_Name: R1-02
   m_TagString: Untagged
@@ -5095,18 +4779,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &531260465
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531260460}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &545100773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,7 +4791,6 @@ GameObject:
   - component: {fileID: 545100777}
   - component: {fileID: 545100775}
   - component: {fileID: 545100776}
-  - component: {fileID: 545100778}
   m_Layer: 0
   m_Name: R1-07
   m_TagString: Untagged
@@ -5235,18 +4906,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &545100778
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545100773}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &575162148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,7 +4918,6 @@ GameObject:
   - component: {fileID: 575162150}
   - component: {fileID: 575162152}
   - component: {fileID: 575162151}
-  - component: {fileID: 575162153}
   m_Layer: 0
   m_Name: B0-10
   m_TagString: Untagged
@@ -5375,18 +5033,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &575162153
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575162148}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &577079308
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,7 +5126,6 @@ GameObject:
   - component: {fileID: 583306241}
   - component: {fileID: 583306243}
   - component: {fileID: 583306242}
-  - component: {fileID: 583306244}
   m_Layer: 0
   m_Name: B0-09
   m_TagString: Untagged
@@ -5596,18 +5241,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &583306244
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583306239}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &608510084
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,7 +5328,6 @@ GameObject:
   - component: {fileID: 611580690}
   - component: {fileID: 611580692}
   - component: {fileID: 611580691}
-  - component: {fileID: 611580693}
   m_Layer: 0
   m_Name: B1-08
   m_TagString: Untagged
@@ -5811,18 +5443,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &611580693
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611580688}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &618576382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,7 +5455,6 @@ GameObject:
   - component: {fileID: 618576384}
   - component: {fileID: 618576386}
   - component: {fileID: 618576385}
-  - component: {fileID: 618576387}
   m_Layer: 0
   m_Name: B0-08
   m_TagString: Untagged
@@ -5951,18 +5570,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &618576387
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618576382}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &665218396
 GameObject:
   m_ObjectHideFlags: 0
@@ -5975,7 +5582,6 @@ GameObject:
   - component: {fileID: 665218398}
   - component: {fileID: 665218400}
   - component: {fileID: 665218399}
-  - component: {fileID: 665218401}
   m_Layer: 0
   m_Name: O0-08
   m_TagString: Untagged
@@ -6091,18 +5697,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &665218401
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665218396}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &684434720
 GameObject:
   m_ObjectHideFlags: 0
@@ -6224,7 +5818,6 @@ GameObject:
   - component: {fileID: 716703884}
   - component: {fileID: 716703882}
   - component: {fileID: 716703883}
-  - component: {fileID: 716703885}
   m_Layer: 0
   m_Name: R1-12
   m_TagString: Untagged
@@ -6340,18 +5933,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &716703885
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716703880}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &731690733
 GameObject:
   m_ObjectHideFlags: 0
@@ -6364,7 +5945,6 @@ GameObject:
   - component: {fileID: 731690737}
   - component: {fileID: 731690735}
   - component: {fileID: 731690736}
-  - component: {fileID: 731690738}
   m_Layer: 0
   m_Name: R0-12
   m_TagString: Untagged
@@ -6480,18 +6060,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &731690738
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 731690733}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &738535850
 GameObject:
   m_ObjectHideFlags: 0
@@ -6504,7 +6072,6 @@ GameObject:
   - component: {fileID: 738535852}
   - component: {fileID: 738535854}
   - component: {fileID: 738535853}
-  - component: {fileID: 738535855}
   m_Layer: 0
   m_Name: B0-05
   m_TagString: Untagged
@@ -6620,18 +6187,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &738535855
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738535850}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &751716393
 GameObject:
   m_ObjectHideFlags: 0
@@ -6725,7 +6280,6 @@ GameObject:
   - component: {fileID: 764541189}
   - component: {fileID: 764541191}
   - component: {fileID: 764541190}
-  - component: {fileID: 764541192}
   m_Layer: 0
   m_Name: B0-07
   m_TagString: Untagged
@@ -6841,18 +6395,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &764541192
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764541187}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &778877175
 GameObject:
   m_ObjectHideFlags: 0
@@ -6865,7 +6407,6 @@ GameObject:
   - component: {fileID: 778877177}
   - component: {fileID: 778877179}
   - component: {fileID: 778877178}
-  - component: {fileID: 778877180}
   m_Layer: 0
   m_Name: O0-06
   m_TagString: Untagged
@@ -6981,18 +6522,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &778877180
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778877175}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &779872884
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,7 +6534,6 @@ GameObject:
   - component: {fileID: 779872886}
   - component: {fileID: 779872888}
   - component: {fileID: 779872887}
-  - component: {fileID: 779872889}
   m_Layer: 0
   m_Name: O1-12
   m_TagString: Untagged
@@ -7121,18 +6649,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &779872889
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779872884}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &789237915
 GameObject:
   m_ObjectHideFlags: 0
@@ -7145,7 +6661,6 @@ GameObject:
   - component: {fileID: 789237919}
   - component: {fileID: 789237917}
   - component: {fileID: 789237918}
-  - component: {fileID: 789237920}
   m_Layer: 0
   m_Name: R1-01
   m_TagString: Untagged
@@ -7261,18 +6776,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &789237920
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789237915}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &790698191
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,7 +6788,6 @@ GameObject:
   - component: {fileID: 790698195}
   - component: {fileID: 790698193}
   - component: {fileID: 790698194}
-  - component: {fileID: 790698196}
   m_Layer: 0
   m_Name: R1-09
   m_TagString: Untagged
@@ -7401,18 +6903,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &790698196
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790698191}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &798490496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7546,6 +7036,7 @@ Transform:
   - {fileID: 1566337759}
   - {fileID: 2128829596}
   - {fileID: 1768853415}
+  - {fileID: 1169348355}
   m_Father: {fileID: 684434724}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7561,7 +7052,6 @@ GameObject:
   - component: {fileID: 844596485}
   - component: {fileID: 844596487}
   - component: {fileID: 844596486}
-  - component: {fileID: 844596488}
   m_Layer: 0
   m_Name: O1-06
   m_TagString: Untagged
@@ -7677,18 +7167,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &844596488
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844596483}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &855286186
 GameObject:
   m_ObjectHideFlags: 0
@@ -7701,7 +7179,6 @@ GameObject:
   - component: {fileID: 855286190}
   - component: {fileID: 855286188}
   - component: {fileID: 855286189}
-  - component: {fileID: 855286191}
   m_Layer: 0
   m_Name: R0-13
   m_TagString: Untagged
@@ -7817,18 +7294,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &855286191
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855286186}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &880395255
 GameObject:
   m_ObjectHideFlags: 0
@@ -7841,7 +7306,6 @@ GameObject:
   - component: {fileID: 880395259}
   - component: {fileID: 880395257}
   - component: {fileID: 880395258}
-  - component: {fileID: 880395260}
   m_Layer: 0
   m_Name: R0-05
   m_TagString: Untagged
@@ -7957,18 +7421,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &880395260
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880395255}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &881563847
 GameObject:
   m_ObjectHideFlags: 0
@@ -7981,7 +7433,6 @@ GameObject:
   - component: {fileID: 881563849}
   - component: {fileID: 881563851}
   - component: {fileID: 881563850}
-  - component: {fileID: 881563852}
   m_Layer: 0
   m_Name: D0-01
   m_TagString: Untagged
@@ -8097,18 +7548,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &881563852
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881563847}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &885249223
 GameObject:
   m_ObjectHideFlags: 0
@@ -8196,7 +7635,6 @@ GameObject:
   - component: {fileID: 912470387}
   - component: {fileID: 912470389}
   - component: {fileID: 912470388}
-  - component: {fileID: 912470390}
   m_Layer: 0
   m_Name: D0-08
   m_TagString: Untagged
@@ -8312,18 +7750,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &912470390
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912470385}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &918207094
 GameObject:
   m_ObjectHideFlags: 0
@@ -8336,7 +7762,6 @@ GameObject:
   - component: {fileID: 918207098}
   - component: {fileID: 918207096}
   - component: {fileID: 918207097}
-  - component: {fileID: 918207099}
   m_Layer: 0
   m_Name: R1-05
   m_TagString: Untagged
@@ -8452,18 +7877,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &918207099
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918207094}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &928085099
 GameObject:
   m_ObjectHideFlags: 0
@@ -8651,7 +8064,6 @@ GameObject:
   - component: {fileID: 942484819}
   - component: {fileID: 942484817}
   - component: {fileID: 942484818}
-  - component: {fileID: 942484820}
   m_Layer: 0
   m_Name: R0-03
   m_TagString: Untagged
@@ -8767,18 +8179,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &942484820
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942484815}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &952568464
 GameObject:
   m_ObjectHideFlags: 0
@@ -8791,7 +8191,6 @@ GameObject:
   - component: {fileID: 952568466}
   - component: {fileID: 952568468}
   - component: {fileID: 952568467}
-  - component: {fileID: 952568469}
   m_Layer: 0
   m_Name: D1-05
   m_TagString: Untagged
@@ -8907,18 +8306,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &952568469
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952568464}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &962698773
 GameObject:
   m_ObjectHideFlags: 0
@@ -9006,7 +8393,6 @@ GameObject:
   - component: {fileID: 974317939}
   - component: {fileID: 974317941}
   - component: {fileID: 974317940}
-  - component: {fileID: 974317942}
   m_Layer: 0
   m_Name: O0-04
   m_TagString: Untagged
@@ -9122,18 +8508,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &974317942
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974317937}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &983162919
 GameObject:
   m_ObjectHideFlags: 0
@@ -9146,7 +8520,6 @@ GameObject:
   - component: {fileID: 983162921}
   - component: {fileID: 983162923}
   - component: {fileID: 983162922}
-  - component: {fileID: 983162924}
   m_Layer: 0
   m_Name: B1-12
   m_TagString: Untagged
@@ -9262,18 +8635,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &983162924
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983162919}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &993425723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9286,7 +8647,6 @@ GameObject:
   - component: {fileID: 993425725}
   - component: {fileID: 993425727}
   - component: {fileID: 993425726}
-  - component: {fileID: 993425728}
   m_Layer: 0
   m_Name: B1-09
   m_TagString: Untagged
@@ -9402,18 +8762,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &993425728
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993425723}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1003409818
 GameObject:
   m_ObjectHideFlags: 0
@@ -9544,7 +8892,6 @@ GameObject:
   - component: {fileID: 1072396068}
   - component: {fileID: 1072396070}
   - component: {fileID: 1072396069}
-  - component: {fileID: 1072396071}
   m_Layer: 0
   m_Name: B1-03
   m_TagString: Untagged
@@ -9660,18 +9007,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1072396071
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072396066}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1098042013
 GameObject:
   m_ObjectHideFlags: 0
@@ -9684,7 +9019,6 @@ GameObject:
   - component: {fileID: 1098042015}
   - component: {fileID: 1098042017}
   - component: {fileID: 1098042016}
-  - component: {fileID: 1098042018}
   m_Layer: 0
   m_Name: D0-06
   m_TagString: Untagged
@@ -9800,18 +9134,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1098042018
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098042013}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1105546496
 GameObject:
   m_ObjectHideFlags: 0
@@ -9824,7 +9146,6 @@ GameObject:
   - component: {fileID: 1105546498}
   - component: {fileID: 1105546500}
   - component: {fileID: 1105546499}
-  - component: {fileID: 1105546501}
   m_Layer: 0
   m_Name: D0-12
   m_TagString: Untagged
@@ -9940,18 +9261,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1105546501
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105546496}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1127521104
 GameObject:
   m_ObjectHideFlags: 0
@@ -10120,7 +9429,6 @@ GameObject:
   - component: {fileID: 1167940353}
   - component: {fileID: 1167940355}
   - component: {fileID: 1167940354}
-  - component: {fileID: 1167940356}
   m_Layer: 0
   m_Name: B1-10
   m_TagString: Untagged
@@ -10236,18 +9544,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1167940356
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167940351}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1168037678
 GameObject:
   m_ObjectHideFlags: 0
@@ -10260,7 +9556,6 @@ GameObject:
   - component: {fileID: 1168037680}
   - component: {fileID: 1168037682}
   - component: {fileID: 1168037681}
-  - component: {fileID: 1168037683}
   m_Layer: 0
   m_Name: B0-06
   m_TagString: Untagged
@@ -10376,18 +9671,80 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1168037683
-CanvasGroup:
+--- !u!1 &1169348354
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168037678}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1169348355}
+  - component: {fileID: 1169348357}
+  - component: {fileID: 1169348356}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1169348355
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169348354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.407407, y: 2.407407, z: 0}
+  m_Children: []
+  m_Father: {fileID: 798490497}
+  m_RootOrder: 106
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -17.84, y: 0.17}
+  m_SizeDelta: {x: 7, y: 9.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1169348356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169348354}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c27df188963ad15498af571f08455522, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1169348357
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169348354}
+  m_CullTransparentMesh: 0
 --- !u!1 &1193201701
 GameObject:
   m_ObjectHideFlags: 0
@@ -10400,7 +9757,6 @@ GameObject:
   - component: {fileID: 1193201703}
   - component: {fileID: 1193201705}
   - component: {fileID: 1193201704}
-  - component: {fileID: 1193201706}
   m_Layer: 0
   m_Name: O0-03
   m_TagString: Untagged
@@ -10516,18 +9872,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1193201706
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193201701}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1195043050
 GameObject:
   m_ObjectHideFlags: 0
@@ -10540,7 +9884,6 @@ GameObject:
   - component: {fileID: 1195043052}
   - component: {fileID: 1195043054}
   - component: {fileID: 1195043053}
-  - component: {fileID: 1195043055}
   m_Layer: 0
   m_Name: B1-13
   m_TagString: Untagged
@@ -10656,18 +9999,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1195043055
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195043050}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1205943147
 GameObject:
   m_ObjectHideFlags: 0
@@ -10680,7 +10011,6 @@ GameObject:
   - component: {fileID: 1205943149}
   - component: {fileID: 1205943151}
   - component: {fileID: 1205943150}
-  - component: {fileID: 1205943152}
   m_Layer: 0
   m_Name: O0-13
   m_TagString: Untagged
@@ -10796,18 +10126,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1205943152
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205943147}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1211898939
 GameObject:
   m_ObjectHideFlags: 0
@@ -10820,7 +10138,6 @@ GameObject:
   - component: {fileID: 1211898941}
   - component: {fileID: 1211898943}
   - component: {fileID: 1211898942}
-  - component: {fileID: 1211898944}
   m_Layer: 0
   m_Name: B0-13
   m_TagString: Untagged
@@ -10936,18 +10253,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1211898944
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211898939}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1230892325
 GameObject:
   m_ObjectHideFlags: 0
@@ -10960,7 +10265,6 @@ GameObject:
   - component: {fileID: 1230892327}
   - component: {fileID: 1230892329}
   - component: {fileID: 1230892328}
-  - component: {fileID: 1230892330}
   m_Layer: 0
   m_Name: D0-05
   m_TagString: Untagged
@@ -11076,18 +10380,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1230892330
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230892325}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1233487243
 GameObject:
   m_ObjectHideFlags: 0
@@ -11380,7 +10672,6 @@ GameObject:
   - component: {fileID: 1292770316}
   - component: {fileID: 1292770318}
   - component: {fileID: 1292770317}
-  - component: {fileID: 1292770319}
   m_Layer: 0
   m_Name: O1-09
   m_TagString: Untagged
@@ -11496,18 +10787,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1292770319
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292770314}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1315700898
 GameObject:
   m_ObjectHideFlags: 0
@@ -11520,7 +10799,6 @@ GameObject:
   - component: {fileID: 1315700900}
   - component: {fileID: 1315700902}
   - component: {fileID: 1315700901}
-  - component: {fileID: 1315700903}
   m_Layer: 0
   m_Name: D1-02
   m_TagString: Untagged
@@ -11636,18 +10914,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1315700903
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315700898}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1324129247
 GameObject:
   m_ObjectHideFlags: 0
@@ -11885,7 +11151,6 @@ GameObject:
   - component: {fileID: 1391365000}
   - component: {fileID: 1391365002}
   - component: {fileID: 1391365001}
-  - component: {fileID: 1391365003}
   m_Layer: 0
   m_Name: D0-07
   m_TagString: Untagged
@@ -12001,18 +11266,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1391365003
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391364998}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1413088622
 GameObject:
   m_ObjectHideFlags: 0
@@ -12100,7 +11353,6 @@ GameObject:
   - component: {fileID: 1422425128}
   - component: {fileID: 1422425130}
   - component: {fileID: 1422425129}
-  - component: {fileID: 1422425131}
   m_Layer: 0
   m_Name: D0-11
   m_TagString: Untagged
@@ -12216,18 +11468,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1422425131
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422425126}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1423275720
 GameObject:
   m_ObjectHideFlags: 0
@@ -12240,7 +11480,6 @@ GameObject:
   - component: {fileID: 1423275722}
   - component: {fileID: 1423275724}
   - component: {fileID: 1423275723}
-  - component: {fileID: 1423275725}
   m_Layer: 0
   m_Name: B1-05
   m_TagString: Untagged
@@ -12356,18 +11595,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1423275725
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423275720}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1427285332
 GameObject:
   m_ObjectHideFlags: 0
@@ -12536,7 +11763,6 @@ GameObject:
   - component: {fileID: 1443956865}
   - component: {fileID: 1443956867}
   - component: {fileID: 1443956866}
-  - component: {fileID: 1443956868}
   m_Layer: 0
   m_Name: O1-04
   m_TagString: Untagged
@@ -12652,18 +11878,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1443956868
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443956863}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1449454287
 GameObject:
   m_ObjectHideFlags: 0
@@ -12751,7 +11965,6 @@ GameObject:
   - component: {fileID: 1451673784}
   - component: {fileID: 1451673786}
   - component: {fileID: 1451673785}
-  - component: {fileID: 1451673787}
   m_Layer: 0
   m_Name: O0-07
   m_TagString: Untagged
@@ -12867,18 +12080,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1451673787
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451673782}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1458695935
 GameObject:
   m_ObjectHideFlags: 0
@@ -12891,7 +12092,6 @@ GameObject:
   - component: {fileID: 1458695937}
   - component: {fileID: 1458695939}
   - component: {fileID: 1458695938}
-  - component: {fileID: 1458695940}
   m_Layer: 0
   m_Name: D1-01
   m_TagString: Untagged
@@ -13007,18 +12207,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1458695940
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458695935}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1495460296
 GameObject:
   m_ObjectHideFlags: 0
@@ -13181,7 +12369,6 @@ GameObject:
   - component: {fileID: 1524329645}
   - component: {fileID: 1524329647}
   - component: {fileID: 1524329646}
-  - component: {fileID: 1524329648}
   m_Layer: 0
   m_Name: D0-03
   m_TagString: Untagged
@@ -13297,18 +12484,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1524329648
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524329643}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1526924232
 GameObject:
   m_ObjectHideFlags: 0
@@ -13343,7 +12518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166, y: -54}
+  m_AnchoredPosition: {x: -63.5, y: -52.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1526924234
@@ -13471,7 +12646,6 @@ GameObject:
   - component: {fileID: 1538006050}
   - component: {fileID: 1538006048}
   - component: {fileID: 1538006049}
-  - component: {fileID: 1538006051}
   m_Layer: 0
   m_Name: R0-11
   m_TagString: Untagged
@@ -13587,18 +12761,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &1538006051
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538006046}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1538990919
 GameObject:
   m_ObjectHideFlags: 0
@@ -13686,7 +12848,6 @@ GameObject:
   - component: {fileID: 1544924972}
   - component: {fileID: 1544924970}
   - component: {fileID: 1544924971}
-  - component: {fileID: 1544924973}
   m_Layer: 0
   m_Name: R1-04
   m_TagString: Untagged
@@ -13802,18 +12963,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &1544924973
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544924968}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1550810703
 GameObject:
   m_ObjectHideFlags: 0
@@ -13826,7 +12975,6 @@ GameObject:
   - component: {fileID: 1550810705}
   - component: {fileID: 1550810707}
   - component: {fileID: 1550810706}
-  - component: {fileID: 1550810708}
   m_Layer: 0
   m_Name: D0-04
   m_TagString: Untagged
@@ -13942,18 +13090,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1550810708
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550810703}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1566337758
 GameObject:
   m_ObjectHideFlags: 0
@@ -13966,7 +13102,6 @@ GameObject:
   - component: {fileID: 1566337760}
   - component: {fileID: 1566337762}
   - component: {fileID: 1566337761}
-  - component: {fileID: 1566337763}
   m_Layer: 0
   m_Name: D1-11
   m_TagString: Untagged
@@ -14082,18 +13217,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1566337763
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566337758}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1589198566
 GameObject:
   m_ObjectHideFlags: 0
@@ -14106,7 +13229,6 @@ GameObject:
   - component: {fileID: 1589198568}
   - component: {fileID: 1589198570}
   - component: {fileID: 1589198569}
-  - component: {fileID: 1589198571}
   m_Layer: 0
   m_Name: D1-03
   m_TagString: Untagged
@@ -14222,18 +13344,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1589198571
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589198566}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1601705161
 GameObject:
   m_ObjectHideFlags: 0
@@ -14246,7 +13356,6 @@ GameObject:
   - component: {fileID: 1601705165}
   - component: {fileID: 1601705163}
   - component: {fileID: 1601705164}
-  - component: {fileID: 1601705166}
   m_Layer: 0
   m_Name: R0-04
   m_TagString: Untagged
@@ -14362,18 +13471,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &1601705166
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601705161}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1636755849
 GameObject:
   m_ObjectHideFlags: 0
@@ -14386,7 +13483,6 @@ GameObject:
   - component: {fileID: 1636755853}
   - component: {fileID: 1636755851}
   - component: {fileID: 1636755852}
-  - component: {fileID: 1636755854}
   m_Layer: 0
   m_Name: R1-10
   m_TagString: Untagged
@@ -14502,18 +13598,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &1636755854
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636755849}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1656069159
 GameObject:
   m_ObjectHideFlags: 0
@@ -14526,7 +13610,6 @@ GameObject:
   - component: {fileID: 1656069163}
   - component: {fileID: 1656069161}
   - component: {fileID: 1656069162}
-  - component: {fileID: 1656069164}
   m_Layer: 0
   m_Name: R1-03
   m_TagString: Untagged
@@ -14642,18 +13725,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &1656069164
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656069159}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1680344751
 GameObject:
   m_ObjectHideFlags: 0
@@ -14862,7 +13933,6 @@ GameObject:
   - component: {fileID: 1720341538}
   - component: {fileID: 1720341540}
   - component: {fileID: 1720341539}
-  - component: {fileID: 1720341541}
   m_Layer: 0
   m_Name: B1-06
   m_TagString: Untagged
@@ -14978,18 +14048,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1720341541
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720341536}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1722187369
 GameObject:
   m_ObjectHideFlags: 0
@@ -15002,7 +14060,6 @@ GameObject:
   - component: {fileID: 1722187371}
   - component: {fileID: 1722187373}
   - component: {fileID: 1722187372}
-  - component: {fileID: 1722187374}
   m_Layer: 0
   m_Name: B1-07
   m_TagString: Untagged
@@ -15118,18 +14175,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1722187374
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722187369}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1761392940
 GameObject:
   m_ObjectHideFlags: 0
@@ -15142,7 +14187,6 @@ GameObject:
   - component: {fileID: 1761392942}
   - component: {fileID: 1761392944}
   - component: {fileID: 1761392943}
-  - component: {fileID: 1761392945}
   m_Layer: 0
   m_Name: D1-04
   m_TagString: Untagged
@@ -15258,18 +14302,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1761392945
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761392940}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1768853414
 GameObject:
   m_ObjectHideFlags: 0
@@ -15282,7 +14314,6 @@ GameObject:
   - component: {fileID: 1768853416}
   - component: {fileID: 1768853418}
   - component: {fileID: 1768853417}
-  - component: {fileID: 1768853419}
   m_Layer: 0
   m_Name: D1-13
   m_TagString: Untagged
@@ -15398,18 +14429,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1768853419
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768853414}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1772499510
 GameObject:
   m_ObjectHideFlags: 0
@@ -15422,7 +14441,6 @@ GameObject:
   - component: {fileID: 1772499512}
   - component: {fileID: 1772499514}
   - component: {fileID: 1772499513}
-  - component: {fileID: 1772499515}
   m_Layer: 0
   m_Name: B1-04
   m_TagString: Untagged
@@ -15538,18 +14556,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1772499515
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772499510}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1784234657
 GameObject:
   m_ObjectHideFlags: 0
@@ -15562,7 +14568,6 @@ GameObject:
   - component: {fileID: 1784234659}
   - component: {fileID: 1784234661}
   - component: {fileID: 1784234660}
-  - component: {fileID: 1784234662}
   m_Layer: 0
   m_Name: O1-03
   m_TagString: Untagged
@@ -15678,18 +14683,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1784234662
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784234657}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1801817404
 GameObject:
   m_ObjectHideFlags: 0
@@ -15702,7 +14695,6 @@ GameObject:
   - component: {fileID: 1801817406}
   - component: {fileID: 1801817408}
   - component: {fileID: 1801817407}
-  - component: {fileID: 1801817409}
   m_Layer: 0
   m_Name: O1-02
   m_TagString: Untagged
@@ -15818,18 +14810,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1801817409
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801817404}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1803851476
 GameObject:
   m_ObjectHideFlags: 0
@@ -15923,7 +14903,6 @@ GameObject:
   - component: {fileID: 1807754452}
   - component: {fileID: 1807754454}
   - component: {fileID: 1807754453}
-  - component: {fileID: 1807754455}
   m_Layer: 0
   m_Name: D0-09
   m_TagString: Untagged
@@ -16039,18 +15018,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1807754455
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807754450}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1814587443
 GameObject:
   m_ObjectHideFlags: 0
@@ -16063,7 +15030,6 @@ GameObject:
   - component: {fileID: 1814587445}
   - component: {fileID: 1814587447}
   - component: {fileID: 1814587446}
-  - component: {fileID: 1814587448}
   m_Layer: 0
   m_Name: O0-05
   m_TagString: Untagged
@@ -16179,18 +15145,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1814587448
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814587443}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1836286312
 GameObject:
   m_ObjectHideFlags: 0
@@ -16203,7 +15157,6 @@ GameObject:
   - component: {fileID: 1836286314}
   - component: {fileID: 1836286316}
   - component: {fileID: 1836286315}
-  - component: {fileID: 1836286317}
   m_Layer: 0
   m_Name: B1-01
   m_TagString: Untagged
@@ -16319,18 +15272,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1836286317
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836286312}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1862174664
 GameObject:
   m_ObjectHideFlags: 0
@@ -16343,7 +15284,6 @@ GameObject:
   - component: {fileID: 1862174666}
   - component: {fileID: 1862174668}
   - component: {fileID: 1862174667}
-  - component: {fileID: 1862174669}
   m_Layer: 0
   m_Name: D1-09
   m_TagString: Untagged
@@ -16459,18 +15399,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1862174669
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862174664}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1874488679
 GameObject:
   m_ObjectHideFlags: 0
@@ -16530,6 +15458,7 @@ Transform:
   - {fileID: 289905220}
   - {fileID: 1495460297}
   - {fileID: 1127521105}
+  - {fileID: 185436753}
   m_Father: {fileID: 684434724}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16545,7 +15474,6 @@ GameObject:
   - component: {fileID: 1889382512}
   - component: {fileID: 1889382514}
   - component: {fileID: 1889382513}
-  - component: {fileID: 1889382515}
   m_Layer: 0
   m_Name: B1-02
   m_TagString: Untagged
@@ -16661,18 +15589,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1889382515
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889382510}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1891997671
 GameObject:
   m_ObjectHideFlags: 0
@@ -16685,7 +15601,6 @@ GameObject:
   - component: {fileID: 1891997675}
   - component: {fileID: 1891997673}
   - component: {fileID: 1891997674}
-  - component: {fileID: 1891997676}
   m_Layer: 0
   m_Name: R1-08
   m_TagString: Untagged
@@ -16801,18 +15716,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &1891997676
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891997671}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1907181307
 GameObject:
   m_ObjectHideFlags: 0
@@ -16825,7 +15728,6 @@ GameObject:
   - component: {fileID: 1907181309}
   - component: {fileID: 1907181311}
   - component: {fileID: 1907181310}
-  - component: {fileID: 1907181312}
   m_Layer: 0
   m_Name: D0-10
   m_TagString: Untagged
@@ -16941,18 +15843,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1907181312
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907181307}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1914634687
 GameObject:
   m_ObjectHideFlags: 0
@@ -17040,7 +15930,6 @@ GameObject:
   - component: {fileID: 1920573544}
   - component: {fileID: 1920573546}
   - component: {fileID: 1920573545}
-  - component: {fileID: 1920573547}
   m_Layer: 0
   m_Name: D1-06
   m_TagString: Untagged
@@ -17156,18 +16045,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1920573547
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920573542}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1950339120
 GameObject:
   m_ObjectHideFlags: 0
@@ -17255,7 +16132,6 @@ GameObject:
   - component: {fileID: 1998307825}
   - component: {fileID: 1998307827}
   - component: {fileID: 1998307826}
-  - component: {fileID: 1998307828}
   m_Layer: 0
   m_Name: O1-08
   m_TagString: Untagged
@@ -17371,18 +16247,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &1998307828
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998307823}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2028193325
 GameObject:
   m_ObjectHideFlags: 0
@@ -17545,7 +16409,6 @@ GameObject:
   - component: {fileID: 2038535290}
   - component: {fileID: 2038535288}
   - component: {fileID: 2038535289}
-  - component: {fileID: 2038535291}
   m_Layer: 0
   m_Name: R0-09
   m_TagString: Untagged
@@ -17661,18 +16524,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &2038535291
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038535286}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2042289339
 GameObject:
   m_ObjectHideFlags: 0
@@ -17685,7 +16536,6 @@ GameObject:
   - component: {fileID: 2042289343}
   - component: {fileID: 2042289341}
   - component: {fileID: 2042289342}
-  - component: {fileID: 2042289344}
   m_Layer: 0
   m_Name: R0-06
   m_TagString: Untagged
@@ -17801,18 +16651,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &2042289344
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042289339}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2046462288
 GameObject:
   m_ObjectHideFlags: 0
@@ -17900,7 +16738,6 @@ GameObject:
   - component: {fileID: 2051249728}
   - component: {fileID: 2051249730}
   - component: {fileID: 2051249729}
-  - component: {fileID: 2051249731}
   m_Layer: 0
   m_Name: O0-09
   m_TagString: Untagged
@@ -18016,18 +16853,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &2051249731
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051249726}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2070650209
 GameObject:
   m_ObjectHideFlags: 0
@@ -18040,7 +16865,6 @@ GameObject:
   - component: {fileID: 2070650211}
   - component: {fileID: 2070650213}
   - component: {fileID: 2070650212}
-  - component: {fileID: 2070650214}
   m_Layer: 0
   m_Name: B0-01
   m_TagString: Untagged
@@ -18156,18 +16980,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &2070650214
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070650209}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2096606710
 GameObject:
   m_ObjectHideFlags: 0
@@ -18180,7 +16992,6 @@ GameObject:
   - component: {fileID: 2096606712}
   - component: {fileID: 2096606714}
   - component: {fileID: 2096606713}
-  - component: {fileID: 2096606715}
   m_Layer: 0
   m_Name: O1-01
   m_TagString: Untagged
@@ -18296,18 +17107,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &2096606715
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096606710}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2123469088
 GameObject:
   m_ObjectHideFlags: 0
@@ -18395,7 +17194,6 @@ GameObject:
   - component: {fileID: 2128829597}
   - component: {fileID: 2128829599}
   - component: {fileID: 2128829598}
-  - component: {fileID: 2128829600}
   m_Layer: 0
   m_Name: D1-12
   m_TagString: Untagged
@@ -18511,18 +17309,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &2128829600
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128829595}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2134576924
 GameObject:
   m_ObjectHideFlags: 0
@@ -18610,7 +17396,6 @@ GameObject:
   - component: {fileID: 2143788600}
   - component: {fileID: 2143788602}
   - component: {fileID: 2143788601}
-  - component: {fileID: 2143788603}
   m_Layer: 0
   m_Name: B0-04
   m_TagString: Untagged
@@ -18726,15 +17511,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 9.8}
   m_EdgeRadius: 0
---- !u!225 &2143788603
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143788598}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0

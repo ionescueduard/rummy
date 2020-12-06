@@ -6,12 +6,17 @@ using Random = System.Random;
 
 public class GameController : MonoBehaviour
 {
-    static private Card[] cards = new Card[106];
-    static private Container[] containers = new Container[32];
+    static private Card[] cardsToIdentifyByIndex = new Card[106];
+    static private Card[] cardsToDrawFrom = new Card[106];
     static private int cardsCurrentIndex = 0;
+
+    static private int containersNumber = 32;
+    static private Container[] containers = new Container[containersNumber];
+
     static private List<Player> players = new List<Player>();
     static private int currentPlayer = 1;
     static private bool playerSwitched = false;
+
     static private Random rng = new Random();
 
     
@@ -30,7 +35,7 @@ public class GameController : MonoBehaviour
             init.Clear();
             for (int j = 0; j < numToAdd; j++)
             {
-                init.Add(cards[cardsCurrentIndex++]);
+                init.Add(cardsToDrawFrom[cardsCurrentIndex++]);
             }
             players[i].initializeBoard(init, first);
         }
@@ -59,20 +64,27 @@ public class GameController : MonoBehaviour
 
     static private Card[] getCardsPack()
     {
-        return cards;
+        return cardsToDrawFrom; //decide which card pack
     }
 
     static public void addCard(int index, Card card)
     {
-        cards[index] = card;
+        cardsToIdentifyByIndex[index] = card;
+        cardsToDrawFrom[index] = card;
         card.gameObject.SetActive(false);
     }
+
+    static public Card getCard(int index) { return cardsToIdentifyByIndex[index]; }
 
     static public void addContainer(int index, Container container)
     {
         containers[index] = container;
         //container.gameObject.SetActive(false);
     }
+
+    static public Container[] getContainers() { return containers; }
+
+    static public int getContainersNumber() { return containersNumber; }
 
     static public void addPlayer(Player player)
     {
@@ -92,9 +104,9 @@ public class GameController : MonoBehaviour
         {
             n--;
             int k = rng.Next(n + 1);
-            Card tmp = cards[k];
-            cards[k] = cards[n];
-            cards[n] = tmp;
+            Card tmp = cardsToDrawFrom[k];
+            cardsToDrawFrom[k] = cardsToDrawFrom[n];
+            cardsToDrawFrom[n] = tmp;
         }
     }
 
