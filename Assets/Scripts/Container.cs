@@ -5,36 +5,31 @@ using System.Collections.Generic;
 
 public class Container : MonoBehaviour
 {
-    static int[] xPositions = { -166, -149, -132, -115, -98, -81, -64, -47, -30, -13, 4, 21, 38, 55, 72, 89 };
-    static int[] yLevelPosition = { -54, -85 };
-
-    static int[] xyWholeBoard = { -161, -54};
-
-    private bool busy = false; // TODO make a pack of containers for every player. make busy when moving over, and not busy when moving from
-
-
-    private int getContainerIndex(bool onlyContainerNumber = false)
+    static public int getContainerIndexByPosition(Vector3 point)
     {
-        int row = (int)(this.name[1] - '0') * 16;
-        int containerNumber = (this.name[2] == '0' ? (int)(this.name[3] - '0') : 10 + (int)(this.name[3] - '0')) - 1;
-
-        if (onlyContainerNumber)
-            return containerNumber;
-
-        return row + containerNumber;
+        int x = (int)Mathf.Round(point.x);
+        int y = (int)Mathf.Round(point.y);
+        for (int i = 0; i < GameController.xBoardSlots; i++)
+        {
+            if (x == GameController.xBoardPositions[i])
+            {
+                return ((y == -54 ? 0 : 1) * GameController.xBoardSlots) + i;
+            }
+        }
+        throw new Exception("Can't find any Container by its position.");
     }
+
+    public int getContainerIndex() { return getYIndex() * GameController.xBoardSlots + getXIndex(); }
+
+    private int getXIndex() { return (this.name[2] == '0' ? (int)(this.name[3] - '0') : 10 + (int)(this.name[3] - '0')) - 1; }
+
+    private int getYIndex() { return (int)(this.name[1] - '0'); }
+
 
     void Start()
     {
-        if (this.name == "WholeBoard")
-        {
-            this.gameObject.transform.position = new Vector3(xyWholeBoard[0], xyWholeBoard[1], -1);
-            return;
-        }
-
         GameController.addContainer(getContainerIndex(), this);
-        this.gameObject.transform.position = new Vector3(xPositions[getContainerIndex(true)], yLevelPosition[(getContainerIndex() < 16 ? 0 : 1)], 0);
+        this.gameObject.transform.position = new Vector3(GameController.xBoardPositions[getXIndex()], GameController.yBoardPositions[getYIndex()], 0);
     }
 
-    
 }

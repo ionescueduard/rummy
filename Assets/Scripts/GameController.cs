@@ -6,6 +6,10 @@ using Random = System.Random;
 
 public class GameController : MonoBehaviour
 {
+    static public int xBoardSlots = 16;
+    static public int[] xBoardPositions = { -166, -149, -132, -115, -98, -81, -64, -47, -30, -13, 4, 21, 38, 55, 72, 89 };
+    static public int[] yBoardPositions = { -54, -85 };
+
     static private Card[] cardsToIdentifyByIndex = new Card[106];
     static private Card[] cardsToDrawFrom = new Card[106];
     static private int cardsCurrentIndex = 0;
@@ -91,10 +95,18 @@ public class GameController : MonoBehaviour
         players.Add(player);
     }
 
+    static public Player getCurrentPlayer() { return players[currentPlayer]; }
 
     static private void nextPlayerIndex()
     {
         currentPlayer = (currentPlayer + 1) % players.Count; 
+    }
+
+    public void nextPlayer()
+    {
+        Debug.Log(string.Format("nextPlayere called, currentPlayer = {0}, and players count = {1}", currentPlayer, players.Count));
+        playerSwitched = true;
+
     }
 
     static private void ShuffleCards()
@@ -108,13 +120,6 @@ public class GameController : MonoBehaviour
             cardsToDrawFrom[k] = cardsToDrawFrom[n];
             cardsToDrawFrom[n] = tmp;
         }
-    }
-
-    public void nextPlayer()
-    {
-        Debug.Log(string.Format("nextPlayere called, currentPlayer = {0}, and players count = {1}", currentPlayer, players.Count));
-        playerSwitched = true;
-        
     }
 
     public void buttonClicked()
