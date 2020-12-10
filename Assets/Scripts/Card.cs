@@ -21,7 +21,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 {
     [SerializeField] private Canvas canvas;
 
-
     private RectTransform rectTransform;
     private Collider2D currentCollider;
 
@@ -37,29 +36,35 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Debug.Log(String.Format("OnBeginDrag : {0}", currentCollider.bounds.ToString()));
-        initialPositionWhenMoved = rectTransform.position;
-        this.GetComponent<SpriteRenderer>().sortingOrder = layerWhenPicked;
+        this.initialPositionWhenMoved = rectTransform.position;
+        //this.GetComponent<SpriteRenderer>().sortingOrder = layerWhenPicked;
+        this.rectTransform.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta * canvas.transform.localScale;
+        rectTransform.anchoredPosition += eventData.delta;// * canvas.transform.localScale;
 
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log(String.Format("Droped {0} with bounds {1}", this.name, currentCollider.bounds));
-        this.GetComponent<SpriteRenderer>().sortingOrder = layerWhenOnBoard;
+        //Debug.Log(String.Format("Droped {0} with bounds {1}", this.name, currentCollider.bounds));
+        //this.GetComponent<SpriteRenderer>().sortingOrder = layerWhenOnBoard;
+        this.rectTransform.SetAsFirstSibling();
 
         Player player = GameController.getCurrentPlayer();
 
         int n = GameController.getContainersNumber();
         Container[] containers = GameController.getContainers();
         Container closestContainer = null;
+
+        Bounds match = currentCollider.bounds;
         for (int i = 0; i < n; i++)
         {
-            if (currentCollider.bounds.Intersects(containers[i].GetComponent<Collider2D>().bounds) && player.isSlotEmpty(containers[i].getContainerIndex()))
+            //can't find why i can't change containers's position z value from -1, so i match it before doing intersect
+            match.center = new Vector3(currentCollider.bounds.center.x, currentCollider.bounds.center.y, containers[i].GetComponent<Collider2D>().bounds.center.z);
+            if (match.Intersects(containers[i].GetComponent<Collider2D>().bounds) && player.isSlotEmpty(containers[i].getContainerIndex()))
             {
                 if (closestContainer == null)
                     closestContainer = containers[i];
@@ -77,14 +82,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         if (!closestContainer)
         {
-            Debug.Log("Collided with NONE");
-            rectTransform.position = initialPositionWhenMoved;
+            //Debug.Log("Collided with NONE");
+            this.rectTransform.position = initialPositionWhenMoved;
         }
         else
         {
             player.freeSlot(Container.getContainerIndexByPosition(initialPositionWhenMoved));
             player.takeSlot(closestContainer.getContainerIndex());
-            rectTransform.anchoredPosition = closestContainer.GetComponent<RectTransform>().anchoredPosition;
+            this.rectTransform.position = closestContainer.GetComponent<RectTransform>().position;
         }
     }
 
@@ -94,9 +99,16 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     /*------------------------*/
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
-        currentCollider = GetComponent<Collider2D>();
+        this.rectTransform = GetComponent<RectTransform>();
+        this.currentCollider = GetComponent<Collider2D>();
+        // for old sprite renderer
+        // scale 2.4, width 7, height 9.8
 
+        // for new image
+        // on board scale: 1.272
+        // on table scale: 0.795
+        this.rectTransform.localScale = new Vector3(1.272f, 1.272f, 0);
+        this.rectTransform.rotation = new Quaternion(0, 0, 0, 0);
         GameController.addCard(this.getCardIndex(), this); 
     }
 

@@ -29,7 +29,7 @@ public class Container : MonoBehaviour
     void Start()
     {
         GameController.addContainer(getContainerIndex(), this);
-        this.gameObject.transform.position = new Vector3(GameController.xBoardPositions[getXIndex()], GameController.yBoardPositions[getYIndex()], 0);
+        GetComponent<RectTransform>().position = new Vector3(GameController.xBoardPositions[getXIndex()], GameController.yBoardPositions[getYIndex()], 0);
     }
 
 }

@@ -7,8 +7,15 @@ using Random = System.Random;
 public class GameController : MonoBehaviour
 {
     static public int xBoardSlots = 16;
-    static public int[] xBoardPositions = { -166, -149, -132, -115, -98, -81, -64, -47, -30, -13, 4, 21, 38, 55, 72, 89 };
     static public int[] yBoardPositions = { -54, -85 };
+    static public int[] xBoardPositions = { -166, -149, -132, -115, -98, -81, -64, -47, -30, -13, 4, 21, 38, 55, 72, 89 };
+    
+    static public float[] yTableFormations = { 70f, 55.2f, 40.4f, 25.6f, 10.8f };
+    static public float[,] xTableFormations = { { -137f,  -126.4f, -115.8f, -105.2f, -94.6f },
+                                                { -58.5f,  -47.9f,  -37.3f,  -26.7f, -16.1f },
+                                                {  20.0f,   30.6f,   41.2f,   51.8f,  62.4f },
+                                                {  98.5f,  109.1f,  119.7f,  130.3f, 140.9f } };
+    
 
     static private Card[] cardsToIdentifyByIndex = new Card[106];
     static private Card[] cardsToDrawFrom = new Card[106];
@@ -53,11 +60,11 @@ public class GameController : MonoBehaviour
     {
         if (playerSwitched)
         {
-            Debug.Log(String.Format("Deactivating player {0}", currentPlayer));
+            //Debug.Log(String.Format("Deactivating player {0}", currentPlayer));
             players[currentPlayer].activateBoard(false);
             nextPlayerIndex();
 
-            Debug.Log(String.Format("Activating player {0}", currentPlayer));
+            //Debug.Log(String.Format("Activating player {0}", currentPlayer));
             players[currentPlayer].activateBoard(true);
 
 
