@@ -19,16 +19,60 @@ using UnityEngine.EventSystems;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField] private Canvas canvas;
-
     private RectTransform rectTransform;
     private Collider2D currentCollider;
+
+    private int number;
+    private char color;
 
     private Vector3 initialPositionWhenMoved;
 
     static private Dictionary<char, short> colorIndex = new Dictionary<char, short>() { {'R', 0}, { 'O', 2 }, { 'B', 4 }, { 'D', 6 }, { 'J', 8} };
-    static private int layerWhenOnBoard = 10;
-    static private int layerWhenPicked = 11;
+
+
+    /*--------------------------*/
+    /*----- Initialization ----*/
+    /*------------------------*/
+    private void init()
+    {
+        if (this.name[0] != 'J')
+        {
+            number = this.name[3] == '0' ? this.name[4] - '0' : 10 + (int)(this.name[4] - '0');
+            color = this.name[0];
+        }
+        else
+        {
+            number = -1;
+            color = ' ';
+        }
+    }
+
+    private void Awake()
+    {
+        init();
+
+        this.rectTransform = GetComponent<RectTransform>();
+        this.currentCollider = GetComponent<Collider2D>();
+        // for old sprite renderer
+        // scale 2.4, width 7, height 9.8
+
+        // for new image
+        // on board scale: 1.272
+        // on table scale: 0.795
+        this.rectTransform.localScale = new Vector3(1.272f, 1.272f, 0);
+        this.rectTransform.rotation = new Quaternion(0, 0, 0, 0);
+        GameController.addCard(this.getCardIndex(), this);
+    }
+
+
+
+ 
+
+    public int getNumber() { return this.number; }
+
+    public char getColor() { return this.color; }
+
+    public bool isJoker() { return this.number == -1; }
 
     /*--------------------------*/
     /*--------- Events --------*/
@@ -37,20 +81,17 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         //Debug.Log(String.Format("OnBeginDrag : {0}", currentCollider.bounds.ToString()));
         this.initialPositionWhenMoved = rectTransform.position;
-        //this.GetComponent<SpriteRenderer>().sortingOrder = layerWhenPicked;
         this.rectTransform.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta;// * canvas.transform.localScale;
-
+        rectTransform.anchoredPosition += eventData.delta;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         //Debug.Log(String.Format("Droped {0} with bounds {1}", this.name, currentCollider.bounds));
-        //this.GetComponent<SpriteRenderer>().sortingOrder = layerWhenOnBoard;
         this.rectTransform.SetAsFirstSibling();
 
         Player player = GameController.getCurrentPlayer();
@@ -87,34 +128,15 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
         else
         {
-            player.freeSlot(Container.getContainerIndexByPosition(initialPositionWhenMoved));
-            player.takeSlot(closestContainer.getContainerIndex());
+            player.moveCardFromSlotToSlot(Container.getContainerIndexByPosition(initialPositionWhenMoved), closestContainer.getContainerIndex());
             this.rectTransform.position = closestContainer.GetComponent<RectTransform>().position;
         }
     }
 
 
-    /*--------------------------*/
-    /*----- Frames Related ----*/
-    /*------------------------*/
-    private void Awake()
-    {
-        this.rectTransform = GetComponent<RectTransform>();
-        this.currentCollider = GetComponent<Collider2D>();
-        // for old sprite renderer
-        // scale 2.4, width 7, height 9.8
-
-        // for new image
-        // on board scale: 1.272
-        // on table scale: 0.795
-        this.rectTransform.localScale = new Vector3(1.272f, 1.272f, 0);
-        this.rectTransform.rotation = new Quaternion(0, 0, 0, 0);
-        GameController.addCard(this.getCardIndex(), this); 
-    }
-
 
     /*--------------------------*/
-    /*--------- Logic ---------*/
+    /*--------- Utils ---------*/
     /*------------------------*/
     private int getCardIndex()
     {

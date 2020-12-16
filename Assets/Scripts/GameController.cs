@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     static private Container[] containers = new Container[containersNumber];
 
     static private List<Player> players = new List<Player>();
-    static private int currentPlayer = 1;
+    static private int currentPlayer;
     static private bool playerSwitched = false;
 
     static private Random rng = new Random();
@@ -53,6 +53,9 @@ public class GameController : MonoBehaviour
 
         //Initialize atuu
 
+
+        /// make currentPlayer last player so it would go to first and start the game
+        currentPlayer = players.Count - 1; 
         playerSwitched = true;
     }
 
@@ -60,11 +63,8 @@ public class GameController : MonoBehaviour
     {
         if (playerSwitched)
         {
-            //Debug.Log(String.Format("Deactivating player {0}", currentPlayer));
             players[currentPlayer].activateBoard(false);
             nextPlayerIndex();
-
-            //Debug.Log(String.Format("Activating player {0}", currentPlayer));
             players[currentPlayer].activateBoard(true);
 
 
@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-
+    /// Card functions
     static private Card[] getCardsPack()
     {
         return cardsToDrawFrom; //decide which card pack
@@ -87,6 +87,8 @@ public class GameController : MonoBehaviour
 
     static public Card getCard(int index) { return cardsToIdentifyByIndex[index]; }
 
+
+    /// Container functions
     static public void addContainer(int index, Container container)
     {
         containers[index] = container;
@@ -97,6 +99,8 @@ public class GameController : MonoBehaviour
 
     static public int getContainersNumber() { return containersNumber; }
 
+
+    /// Player functions
     static public void addPlayer(Player player)
     {
         players.Add(player);
@@ -104,17 +108,9 @@ public class GameController : MonoBehaviour
 
     static public Player getCurrentPlayer() { return players[currentPlayer]; }
 
-    static private void nextPlayerIndex()
-    {
-        currentPlayer = (currentPlayer + 1) % players.Count; 
-    }
+    static private void nextPlayerIndex() { currentPlayer = (currentPlayer + 1) % players.Count; }
 
-    public void nextPlayer()
-    {
-        Debug.Log(string.Format("nextPlayere called, currentPlayer = {0}, and players count = {1}", currentPlayer, players.Count));
-        playerSwitched = true;
 
-    }
 
     static private void ShuffleCards()
     {
@@ -129,9 +125,19 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void buttonClicked()
+
+
+    /* button linked functions */
+    public void nextPlayer() { playerSwitched = true; }
+
+    public void placeCards()
     {
-        Debug.Log("got here");
+        // 94 width for every card
+        //  7 for borders, 154.3 height
+
     }
+
+
+
 
 }
