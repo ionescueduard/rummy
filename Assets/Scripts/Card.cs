@@ -24,6 +24,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     private int number;
     private char color;
+    private int onBoardX;
+    private int onBoardY;
+
 
     private Vector3 initialPositionWhenMoved;
 
@@ -45,6 +48,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             number = -1;
             color = ' ';
         }
+
+        /// -2 represents nowere
+        /// -1 represents on Table
+        /// >= 0 represents positions on Board
+        onBoardX = -2;
+        onBoardY = -2;
     }
 
     private void Awake()
@@ -128,7 +137,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
         else
         {
-            player.moveCardFromSlotToSlot(Container.getContainerIndexByPosition(initialPositionWhenMoved), closestContainer.getContainerIndex());
+            player.moveCardFromSlotToSlot(this, Container.getContainerIndexByPosition(initialPositionWhenMoved), closestContainer.getContainerIndex());
             this.rectTransform.position = closestContainer.GetComponent<RectTransform>().position;
         }
     }
@@ -146,11 +155,35 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         return cardPackNumber + cardNumber;
     }
 
+    public void setOnBoardPosition(int y, int x)
+    {
+        onBoardX = x;
+        onBoardY = y;
+    }
+
+    public int getOnBoardX() { return onBoardX; }
+
+    public int getOnBoardY() { return onBoardY; }
+
     static public int getCardIndexByName(string name)
     {
         int cardPackNumber = colorIndex[name[0]] * 13 + (int)(name[1] - '0') * 13;
         int cardNumber = (name[3] == '0' ? name[4] - '0' : 10 + (int)(name[4] - '0')) - 1;
 
         return cardPackNumber + cardNumber;
+    }
+
+    static public int getCardIndexOnBoardByPosition(Vector3 point)
+    {
+        int x = (int)Mathf.Round(point.x);
+        int y = (int)Mathf.Round(point.y);
+        for (int i = 0; i < GameController.xBoardSlots; i++)
+        {
+            if (x == GameController.xBoardPositions[i])
+            {
+                return ((y == -54 ? 0 : 1) * GameController.xBoardSlots) + i;
+            }
+        }
+        throw new Exception("Can't find any Container by its position.");
     }
 }

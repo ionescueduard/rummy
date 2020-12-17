@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private GameObject panelToPlace;
+    private GameObject panelToPlace;
+    private int index;
 
     private static int numberOfCardsPerRow = 16;
     private static int numberOfRows = 2;
@@ -15,10 +16,14 @@ public class Player : MonoBehaviour
     private Card upperSpecial; //TODO
     private Card lowerSpecial; //TODO
 
+    private List<List<Card>> cardsOnTable = new List<List<Card>>();
+
+
     /*--------------------------*/
     /*-------- Settings -------*/
     /*------------------------*/
     bool dropCardsOnlyWithOnesPairFeature = false;
+
 
 
 
@@ -36,6 +41,13 @@ public class Player : MonoBehaviour
     {
         init();
         GameController.addPlayer(this);
+    }
+
+    public void setPanel(int index)
+    {
+        this.index = index;
+        string panel = String.Format("OnTable{0}", index);
+        panelToPlace = GameObject.Find(panel);
     }
 
 
@@ -72,9 +84,9 @@ public class Player : MonoBehaviour
                 }
 
                 List<Card> tmp = new List<Card>();
-                for (int j = 0; j < i; j++)
+                for (int j = startIndex; j < i; j++)
                 {
-                    tmp.Add(row[j++]);
+                    tmp.Add(row[j]);
                 }
                 rez.Add(tmp);
             }
@@ -103,7 +115,7 @@ public class Player : MonoBehaviour
         if (isRunPair(pair))
         {
             int color = pair[0].getColor();
-            int prevNumber = pair[0].getColor();
+            int prevNumber = pair[0].getNumber();
             for (int i = 1; i < pair.Count; i++)
             {
                 if (pair[i].isJoker())
@@ -132,7 +144,7 @@ public class Player : MonoBehaviour
         return true;
     }
 
-    public List<List<Card>> getPairs()
+    private List<List<Card>> getPairs()
     {
         List<List<Card>> rez = new List<List<Card>>();
         for (int row = 0; row <= 1; row++)
@@ -148,6 +160,40 @@ public class Player : MonoBehaviour
         }
         return rez;
     }
+
+    private void placePairAtPosition(List<Card> pair, int y)
+    {
+        for (int x = 0; x < pair.Count; x++)
+        {
+            // on table scale: 0.795
+            pair[x].transform.localScale = new Vector3(0.795f, 0.795f, 0);
+            pair[x].transform.position = new Vector3(GameController.xTableFormations[this.index, x], GameController.yTableFormations[y], 0);
+            pair[x].transform.SetParent(panelToPlace.transform);
+        }
+
+    }
+
+    private void removePairFromTable(List<Card> pair)
+    {
+        foreach (Card card in pair)
+        {
+            cardsOnPositions[card.getOnBoardY()][card.getOnBoardY()] = null;
+            /// -1 represents on Table
+            card.setOnBoardPosition(-1, -1);
+        }
+    }
+
+    public void placePairsOnTable()
+    {
+        List<List<Card>> pairs = getPairs();
+        foreach (List<Card> pair in pairs)
+        {
+            removePairFromTable(pair);
+            placePairAtPosition(pair, cardsOnTable.Count);
+            cardsOnTable.Add(pair);
+        }
+    }
+
 
     private int getJokerReplacementNumber(List<Card> pair, int i)
     {
@@ -207,9 +253,14 @@ public class Player : MonoBehaviour
     }
 
 
+
+   
+
+
+
     public bool isSlotEmpty(int index) { return cardsOnPositions[index / numberOfCardsPerRow][index % numberOfCardsPerRow] == null; }
 
-    public void moveCardFromSlotToSlot(int fromIndex, int toIndex)
+    public void moveCardFromSlotToSlot(Card card, int fromIndex, int toIndex)
     {
         int fromY = fromIndex / numberOfCardsPerRow;
         int fromX = fromIndex % numberOfCardsPerRow;
@@ -217,7 +268,10 @@ public class Player : MonoBehaviour
         int toX = toIndex % numberOfCardsPerRow;
         cardsOnPositions[toY][toX] = cardsOnPositions[fromY][fromX];
         cardsOnPositions[fromY][fromX] = null;
+        card.setOnBoardPosition(toY, toX);
     }
+
+
 
     public void initializeBoard(List<Card> cards, bool first)
     {
@@ -234,11 +288,20 @@ public class Player : MonoBehaviour
         }  
     }
 
-    public void activateBoard(bool activate) { foreach (Card card in cards) { card.gameObject.SetActive(activate); } }
+    public void activateBoard(bool activate)
+    {
+        foreach (Card card in cards)
+        {
+            /// if card not placed on table
+            if (card.getOnBoardX() != -1)
+                card.gameObject.SetActive(activate);
+        }
+    }
 
     private void addCardOnBoardAt(int y, int x, Card card)
     {
         /// Debug.Log(String.Format("Card: {0} - x:{1} y:{2} z:{3}", card.gameObject.name, xPositions[index], yLevelPosition[level], 0));
+        card.setOnBoardPosition(y, x);
         cards.Add(card);
         cardsOnPositions[y][x] = card;
         card.transform.position = new Vector3(GameController.xBoardPositions[x], GameController.yBoardPositions[y], 0); 

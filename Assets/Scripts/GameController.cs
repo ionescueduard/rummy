@@ -49,6 +49,7 @@ public class GameController : MonoBehaviour
                 init.Add(cardsToDrawFrom[cardsCurrentIndex++]);
             }
             players[i].initializeBoard(init, first);
+            players[i].setPanel(i);
         }
 
         //Initialize atuu
@@ -134,7 +135,7 @@ public class GameController : MonoBehaviour
     {
         // 94 width for every card
         //  7 for borders, 154.3 height
-
+        players[currentPlayer].placePairsOnTable();
     }
 
 
