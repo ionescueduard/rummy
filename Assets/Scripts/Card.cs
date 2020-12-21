@@ -27,6 +27,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private int onBoardX;
     private int onBoardY;
 
+    private bool movable;
 
     private Vector3 initialPositionWhenMoved;
 
@@ -73,9 +74,91 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         GameController.addCard(this.getCardIndex(), this);
     }
 
+    public void initBeforPickingCard()
+    {
+        this.gameObject.SetActive(true);
+        this.setMovable(true);
+    }
 
 
- 
+
+
+
+    /*--------------------------*/
+    /*--------- Events --------*/
+    /*------------------------*/
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (movable)
+        {
+            //Debug.Log(String.Format("OnBeginDrag : {0}", currentCollider.bounds.ToString()));
+            this.initialPositionWhenMoved = rectTransform.position;
+            this.rectTransform.SetAsLastSibling();
+        }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (movable)
+        {
+            rectTransform.anchoredPosition += eventData.delta;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (movable)
+        {
+            //Debug.Log(String.Format("Droped {0} with bounds {1}", this.name, currentCollider.bounds));
+            this.rectTransform.SetAsFirstSibling();
+
+            Player player = GameController.getCurrentPlayer();
+
+            int n = GameController.getContainersNumber();
+            Container[] containers = GameController.getContainers();
+            Container closestContainer = null;
+
+            Bounds match = currentCollider.bounds;
+            for (int i = 0; i < n; i++)
+            {
+                //can't find why i can't change containers's position z value from -1, so i match it before doing intersect
+                match.center = new Vector3(currentCollider.bounds.center.x, currentCollider.bounds.center.y, containers[i].GetComponent<Collider2D>().bounds.center.z);
+                if (match.Intersects(containers[i].GetComponent<Collider2D>().bounds) && player.isSlotEmpty(containers[i].getContainerIndex()))
+                {
+                    if (closestContainer == null)
+                        closestContainer = containers[i];
+                    else
+                    {
+                        float prev = Mathf.Abs(closestContainer.GetComponent<Collider2D>().bounds.center.x - currentCollider.bounds.center.x) +
+                             Mathf.Abs(closestContainer.GetComponent<Collider2D>().bounds.center.y - currentCollider.bounds.center.y);
+                        float current = Mathf.Abs(containers[i].GetComponent<Collider2D>().bounds.center.x - currentCollider.bounds.center.x) +
+                             Mathf.Abs(containers[i].GetComponent<Collider2D>().bounds.center.y - currentCollider.bounds.center.y);
+                        if (current < prev)
+                            closestContainer = containers[i];
+                    }
+                }
+            }
+
+            if (!closestContainer)
+            {
+                //Debug.Log("Collided with NONE");
+                this.rectTransform.position = initialPositionWhenMoved;
+            }
+            else
+            {
+                player.moveCardFromSlotToSlot(this, Container.getContainerIndexByPosition(initialPositionWhenMoved), closestContainer.getContainerIndex());
+                this.rectTransform.position = closestContainer.GetComponent<RectTransform>().position;
+            }
+        }
+    }
+
+
+
+
+    /*--------------------------*/
+    /*--------- Utils ---------*/
+    /*------------------------*/
+    public void setMovable(bool status) { this.movable = status; }
 
     public int getNumber() { return this.number; }
 
@@ -83,70 +166,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public bool isJoker() { return this.number == -1; }
 
-    /*--------------------------*/
-    /*--------- Events --------*/
-    /*------------------------*/
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        //Debug.Log(String.Format("OnBeginDrag : {0}", currentCollider.bounds.ToString()));
-        this.initialPositionWhenMoved = rectTransform.position;
-        this.rectTransform.SetAsLastSibling();
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        rectTransform.anchoredPosition += eventData.delta;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        //Debug.Log(String.Format("Droped {0} with bounds {1}", this.name, currentCollider.bounds));
-        this.rectTransform.SetAsFirstSibling();
-
-        Player player = GameController.getCurrentPlayer();
-
-        int n = GameController.getContainersNumber();
-        Container[] containers = GameController.getContainers();
-        Container closestContainer = null;
-
-        Bounds match = currentCollider.bounds;
-        for (int i = 0; i < n; i++)
-        {
-            //can't find why i can't change containers's position z value from -1, so i match it before doing intersect
-            match.center = new Vector3(currentCollider.bounds.center.x, currentCollider.bounds.center.y, containers[i].GetComponent<Collider2D>().bounds.center.z);
-            if (match.Intersects(containers[i].GetComponent<Collider2D>().bounds) && player.isSlotEmpty(containers[i].getContainerIndex()))
-            {
-                if (closestContainer == null)
-                    closestContainer = containers[i];
-                else
-                {
-                    float prev = Mathf.Abs(closestContainer.GetComponent<Collider2D>().bounds.center.x - currentCollider.bounds.center.x) +
-                         Mathf.Abs(closestContainer.GetComponent<Collider2D>().bounds.center.y - currentCollider.bounds.center.y);
-                    float current = Mathf.Abs(containers[i].GetComponent<Collider2D>().bounds.center.x - currentCollider.bounds.center.x) +
-                         Mathf.Abs(containers[i].GetComponent<Collider2D>().bounds.center.y - currentCollider.bounds.center.y);
-                    if (current < prev)
-                        closestContainer = containers[i];
-                }
-            }
-        }
-
-        if (!closestContainer)
-        {
-            //Debug.Log("Collided with NONE");
-            this.rectTransform.position = initialPositionWhenMoved;
-        }
-        else
-        {
-            player.moveCardFromSlotToSlot(this, Container.getContainerIndexByPosition(initialPositionWhenMoved), closestContainer.getContainerIndex());
-            this.rectTransform.position = closestContainer.GetComponent<RectTransform>().position;
-        }
-    }
-
-
-
-    /*--------------------------*/
-    /*--------- Utils ---------*/
-    /*------------------------*/
     private int getCardIndex()
     {
         int cardPackNumber = colorIndex[this.name[0]] * 13 + (int)(this.name[1] - '0') * 13;

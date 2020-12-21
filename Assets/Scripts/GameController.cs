@@ -15,7 +15,8 @@ public class GameController : MonoBehaviour
                                                 { -58.5f,  -47.9f,  -37.3f,  -26.7f, -16.1f },
                                                 {  20.0f,   30.6f,   41.2f,   51.8f,  62.4f },
                                                 {  98.5f,  109.1f,  119.7f,  130.3f, 140.9f } };
-    
+    static public float xTableFormationsGap = 10.6f;
+
 
     static private Card[] cardsToIdentifyByIndex = new Card[106];
     static private Card[] cardsToDrawFrom = new Card[106];
@@ -28,14 +29,20 @@ public class GameController : MonoBehaviour
     static private int currentPlayer;
     static private bool playerSwitched = false;
 
+    static private Arrow[,,] arrows = new Arrow[4, 5, 2];
+
     static private Random rng = new Random();
 
-    
 
 
+    /*--------------------------*/
+    /*--------- Frame ---------*/
+    /*------------------------*/
     private void Start()
     {
-        ShuffleCards();
+        sortPlayers();
+
+        //ShuffleCards();
 
         int numToAdd;
         List<Card> init = new List<Card>();
@@ -49,7 +56,6 @@ public class GameController : MonoBehaviour
                 init.Add(cardsToDrawFrom[cardsCurrentIndex++]);
             }
             players[i].initializeBoard(init, first);
-            players[i].setPanel(i);
         }
 
         //Initialize atuu
@@ -73,7 +79,12 @@ public class GameController : MonoBehaviour
         }
     }
 
-    /// Card functions
+
+
+
+    /*--------------------------*/
+    /*--------- Card ----------*/
+    /*------------------------*/
     static private Card[] getCardsPack()
     {
         return cardsToDrawFrom; //decide which card pack
@@ -89,7 +100,10 @@ public class GameController : MonoBehaviour
     static public Card getCard(int index) { return cardsToIdentifyByIndex[index]; }
 
 
-    /// Container functions
+
+    /*--------------------------*/
+    /*------- Container -------*/
+    /*------------------------*/
     static public void addContainer(int index, Container container)
     {
         containers[index] = container;
@@ -101,7 +115,10 @@ public class GameController : MonoBehaviour
     static public int getContainersNumber() { return containersNumber; }
 
 
-    /// Player functions
+
+    /*--------------------------*/
+    /*-------- Player ---------*/
+    /*------------------------*/
     static public void addPlayer(Player player)
     {
         players.Add(player);
@@ -110,6 +127,28 @@ public class GameController : MonoBehaviour
     static public Player getCurrentPlayer() { return players[currentPlayer]; }
 
     static private void nextPlayerIndex() { currentPlayer = (currentPlayer + 1) % players.Count; }
+
+    static private void sortPlayers()
+    {
+        players.Sort((x, y) => x.getIndex().CompareTo(y.getIndex()));
+    }
+
+
+
+    /*--------------------------*/
+    /*--------- Arrow ---------*/
+    /*------------------------*/
+    static public void addArrow(Arrow arrow, int player, int row, int side)
+    {
+        arrows[player, row, side] = arrow;
+        arrow.gameObject.SetActive(false);
+    }
+
+    static public void activateArrows(int player, int row)
+    {
+        arrows[player, row, 0].gameObject.SetActive(true);
+        arrows[player, row, 1].gameObject.SetActive(true);
+    }
 
 
 
@@ -128,7 +167,10 @@ public class GameController : MonoBehaviour
 
 
 
-    /* button linked functions */
+
+    /*--------------------------*/
+    /*-------- Buttons --------*/
+    /*------------------------*/
     public void nextPlayer() { playerSwitched = true; }
 
     public void placeCards()

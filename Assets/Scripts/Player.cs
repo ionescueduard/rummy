@@ -8,15 +8,19 @@ public class Player : MonoBehaviour
     private GameObject panelToPlace;
     private int index;
 
-    private static int numberOfCardsPerRow = 16;
-    private static int numberOfRows = 2;
+    static private int NUMBER_OF_CARDS_PER_ROW = 16;
+    static private int NUMBER_OR_ROWS = 2;
     private List<Card> cards = new List<Card>();
-    private Card[][] cardsOnPositions = new Card[numberOfRows][];
+    private Card[][] cardsOnPositions = new Card[NUMBER_OR_ROWS][];
 
     private Card upperSpecial; //TODO
     private Card lowerSpecial; //TODO
 
     private List<List<Card>> cardsOnTable = new List<List<Card>>();
+    static private int NUMBER_OF_CARDS_IN_PAIR = 5;
+    static private int NUMBER_OF_PAIRS = 5;
+    private int[] currentFirstInPair = new int[NUMBER_OF_CARDS_IN_PAIR];
+    
 
 
     /*--------------------------*/
@@ -33,8 +37,11 @@ public class Player : MonoBehaviour
     /*------------------------*/
     private void init()
     {
-        for (int i = 0; i < numberOfRows; i++)
-            cardsOnPositions[i] = new Card[numberOfCardsPerRow];
+        for (int i = 0; i < NUMBER_OR_ROWS; i++)
+            cardsOnPositions[i] = new Card[NUMBER_OF_CARDS_PER_ROW];
+
+        this.index = (int)(this.name[6] - '0');
+        this.panelToPlace = GameObject.Find(String.Format("OnTable{0}", this.index));
     }
 
     private void Awake()
@@ -42,14 +49,6 @@ public class Player : MonoBehaviour
         init();
         GameController.addPlayer(this);
     }
-
-    public void setPanel(int index)
-    {
-        this.index = index;
-        string panel = String.Format("OnTable{0}", index);
-        panelToPlace = GameObject.Find(panel);
-    }
-
 
 
 
@@ -70,15 +69,15 @@ public class Player : MonoBehaviour
         List<List<Card>> rez = new List<List<Card>>();
 
         int i = 0;
-        while (i < numberOfCardsPerRow)
+        while (i < NUMBER_OF_CARDS_PER_ROW)
         {
             /// check if we have at least 3 in a row
-            if (i + 2 < numberOfCardsPerRow && row[i] != null && row[i+1] != null && row[i+2] != null)
+            if (i + 2 < NUMBER_OF_CARDS_PER_ROW && row[i] != null && row[i+1] != null && row[i+2] != null)
             {
                 int startIndex = i;
                 i += 3;
                 /// append more conneceted cards
-                while (i < numberOfCardsPerRow && row[i])
+                while (i < NUMBER_OF_CARDS_PER_ROW && row[i])
                 {
                     i++;
                 }
@@ -114,9 +113,26 @@ public class Player : MonoBehaviour
 
         if (isRunPair(pair))
         {
-            int color = pair[0].getColor();
-            int prevNumber = pair[0].getNumber();
-            for (int i = 1; i < pair.Count; i++)
+            int prevNumber;
+            int color;
+            int startWith;
+            if (pair[0].isJoker())
+            {
+                if (pair[1].getNumber() == 1)
+                    return false;
+
+                prevNumber = pair[1].getNumber();
+                color = pair[1].getColor();
+                startWith = 2;
+            }
+            else
+            {
+                prevNumber = pair[0].getNumber();
+                color = pair[0].getColor();
+                startWith = 1;
+            }    
+            
+            for (int i = startWith; i < pair.Count; i++)
             {
                 if (pair[i].isJoker())
                 {
@@ -161,25 +177,32 @@ public class Player : MonoBehaviour
         return rez;
     }
 
-    private void placePairAtPosition(List<Card> pair, int y)
+    private void placePairOnRow(List<Card> pair, int row)
     {
-        for (int x = 0; x < pair.Count; x++)
+        float cardXPosition = GameController.xTableFormations[this.index, 0];
+        for (int x = 0; x < pair.Count; x++, cardXPosition += GameController.xTableFormationsGap)
         {
             // on table scale: 0.795
             pair[x].transform.localScale = new Vector3(0.795f, 0.795f, 0);
-            pair[x].transform.position = new Vector3(GameController.xTableFormations[this.index, x], GameController.yTableFormations[y], 0);
+            pair[x].transform.position = new Vector3(cardXPosition, GameController.yTableFormations[row], 0);
             pair[x].transform.SetParent(panelToPlace.transform);
         }
 
+        currentFirstInPair[row] = 0;
+        if (pair.Count > 5)
+            GameController.activateArrows(this.index, row);
     }
 
     private void removePairFromTable(List<Card> pair)
     {
         foreach (Card card in pair)
         {
-            cardsOnPositions[card.getOnBoardY()][card.getOnBoardY()] = null;
+            cardsOnPositions[card.getOnBoardY()][card.getOnBoardX()] = null;
             /// -1 represents on Table
             card.setOnBoardPosition(-1, -1);
+
+            /// also make unmovable on table
+            card.setMovable(false);
         }
     }
 
@@ -189,7 +212,7 @@ public class Player : MonoBehaviour
         foreach (List<Card> pair in pairs)
         {
             removePairFromTable(pair);
-            placePairAtPosition(pair, cardsOnTable.Count);
+            placePairOnRow(pair, cardsOnTable.Count);
             cardsOnTable.Add(pair);
         }
     }
@@ -254,18 +277,36 @@ public class Player : MonoBehaviour
 
 
 
-   
+    public void shiftCardsForPair(int pairIndex, int direction)
+    {
+        if (direction == -1)  /// left
+        {
+            if (currentFirstInPair[pairIndex] + cardsOnTable[pairIndex].Count <= NUMBER_OF_CARDS_IN_PAIR)
+                return;
+        }
+        else                 /// right
+        {
+            if (currentFirstInPair[pairIndex] >= 0)
+                return;
+        }
+
+        currentFirstInPair[pairIndex] += direction;
+        foreach (Card card in cardsOnTable[pairIndex])
+        {
+            card.transform.position = new Vector3 (card.transform.position.x + direction * GameController.xTableFormationsGap, card.transform.position.y, 0);
+        }
+    }
 
 
 
-    public bool isSlotEmpty(int index) { return cardsOnPositions[index / numberOfCardsPerRow][index % numberOfCardsPerRow] == null; }
+    public bool isSlotEmpty(int index) { return cardsOnPositions[index / NUMBER_OF_CARDS_PER_ROW][index % NUMBER_OF_CARDS_PER_ROW] == null; }
 
     public void moveCardFromSlotToSlot(Card card, int fromIndex, int toIndex)
     {
-        int fromY = fromIndex / numberOfCardsPerRow;
-        int fromX = fromIndex % numberOfCardsPerRow;
-        int toY = toIndex / numberOfCardsPerRow;
-        int toX = toIndex % numberOfCardsPerRow;
+        int fromY = fromIndex / NUMBER_OF_CARDS_PER_ROW;
+        int fromX = fromIndex % NUMBER_OF_CARDS_PER_ROW;
+        int toY = toIndex / NUMBER_OF_CARDS_PER_ROW;
+        int toX = toIndex % NUMBER_OF_CARDS_PER_ROW;
         cardsOnPositions[toY][toX] = cardsOnPositions[fromY][fromX];
         cardsOnPositions[fromY][fromX] = null;
         card.setOnBoardPosition(toY, toX);
@@ -304,8 +345,13 @@ public class Player : MonoBehaviour
         card.setOnBoardPosition(y, x);
         cards.Add(card);
         cardsOnPositions[y][x] = card;
-        card.transform.position = new Vector3(GameController.xBoardPositions[x], GameController.yBoardPositions[y], 0); 
+        card.transform.position = new Vector3(GameController.xBoardPositions[x], GameController.yBoardPositions[y], 0);
+        card.setMovable(true);
     }
 
 
+    public int getIndex()
+    {
+        return this.index;
+    }
 }

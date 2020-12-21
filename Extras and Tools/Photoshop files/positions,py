@@ -1,0 +1,11 @@
+
+start = -137 
+for i in [1,2,3,4]:
+	x = 5
+	print("[", end="")
+	while x:
+		print(str(round(start, 2)), end=", ")
+		start += 10.6
+		x -= 1
+	print("]")
+	start += 25.5
