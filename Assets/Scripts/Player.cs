@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
 
 
 
+    /*-------------Pairs-------------*/
+    /*--------- Right Pairs --------*/
+    /*-----------------------------*/
     private bool isRunPair(List<Card> pair)
     {
         if (pair[0].isJoker())
@@ -177,6 +180,10 @@ public class Player : MonoBehaviour
         return rez;
     }
 
+
+    /*-------------Pairs-------------*/
+    /*--------- Pairs Placement ----*/
+    /*-----------------------------*/
     private void placePairOnRow(List<Card> pair, int row)
     {
         float cardXPosition = GameController.xTableFormations[this.index, 0];
@@ -218,6 +225,9 @@ public class Player : MonoBehaviour
     }
 
 
+    /*-------------Pairs-------------*/
+    /*--------- Pairs Points -------*/
+    /*-----------------------------*/
     private int getJokerReplacementNumber(List<Card> pair, int i)
     {
         if (isRunPair(pair))
@@ -276,29 +286,31 @@ public class Player : MonoBehaviour
     }
 
 
-
-    public void shiftCardsForPair(int pairIndex, int direction)
+    /*-------------Pairs-------------*/
+    /*--------- Pairs Shift --------*/
+    /*-----------------------------*/
+    public bool canPairShift(int pairIndex, GameController.ShiftDirection direction)
     {
-        if (direction == -1)  /// left
-        {
-            if (currentFirstInPair[pairIndex] + cardsOnTable[pairIndex].Count <= NUMBER_OF_CARDS_IN_PAIR)
-                return;
-        }
-        else                 /// right
-        {
-            if (currentFirstInPair[pairIndex] >= 0)
-                return;
-        }
+        if (direction == GameController.ShiftDirection.Left)
+            return currentFirstInPair[pairIndex] + cardsOnTable[pairIndex].Count > NUMBER_OF_CARDS_IN_PAIR;
+        return currentFirstInPair[pairIndex] < 0;
+    }
 
-        currentFirstInPair[pairIndex] += direction;
-        foreach (Card card in cardsOnTable[pairIndex])
+    public void shiftCardsForPair(int pairIndex, GameController.ShiftDirection direction)
+    {
+        if (canPairShift(pairIndex, direction))
         {
-            card.transform.position = new Vector3 (card.transform.position.x + direction * GameController.xTableFormationsGap, card.transform.position.y, 0);
+            currentFirstInPair[pairIndex] += (int)direction;
+            foreach (Card card in cardsOnTable[pairIndex])
+                card.transform.position = new Vector3(card.transform.position.x + (int)direction * GameController.xTableFormationsGap, card.transform.position.y, 0);
         }
     }
 
 
 
+    /*-------------Board-------------*/
+    /*--------- Board Slots --------*/
+    /*-----------------------------*/
     public bool isSlotEmpty(int index) { return cardsOnPositions[index / NUMBER_OF_CARDS_PER_ROW][index % NUMBER_OF_CARDS_PER_ROW] == null; }
 
     public void moveCardFromSlotToSlot(Card card, int fromIndex, int toIndex)
@@ -314,6 +326,9 @@ public class Player : MonoBehaviour
 
 
 
+    /*-------------Board-------------*/
+    /*--------- Board Edits --------*/
+    /*-----------------------------*/
     public void initializeBoard(List<Card> cards, bool first)
     {
         int i = 0, j = 0;
@@ -350,6 +365,10 @@ public class Player : MonoBehaviour
     }
 
 
+
+    /*-------------Utils-------------*/
+    /*------------------------------*/
+    /*-----------------------------*/
     public int getIndex()
     {
         return this.index;

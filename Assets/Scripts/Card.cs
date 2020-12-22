@@ -21,6 +21,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 {
     private RectTransform rectTransform;
     private Collider2D currentCollider;
+    private CanvasGroup canvasGroup;
 
     private int number;
     private char color;
@@ -63,6 +64,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
         this.rectTransform = GetComponent<RectTransform>();
         this.currentCollider = GetComponent<Collider2D>();
+        this.canvasGroup = GetComponent<CanvasGroup>();
         // for old sprite renderer
         // scale 2.4, width 7, height 9.8
 
@@ -89,8 +91,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     /*------------------------*/
     public void OnBeginDrag(PointerEventData eventData)
     {
+        this.canvasGroup.blocksRaycasts = false;
         if (movable)
         {
+            GameController.pickCard();
+
             //Debug.Log(String.Format("OnBeginDrag : {0}", currentCollider.bounds.ToString()));
             this.initialPositionWhenMoved = rectTransform.position;
             this.rectTransform.SetAsLastSibling();
@@ -105,7 +110,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData) // TODO when dropped card, check if stickPointer active, and append card to a table pair 
     {
         if (movable)
         {
@@ -147,9 +152,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             else
             {
                 player.moveCardFromSlotToSlot(this, Container.getContainerIndexByPosition(initialPositionWhenMoved), closestContainer.getContainerIndex());
-                this.rectTransform.position = closestContainer.GetComponent<RectTransform>().position;
+                this.rectTransform.position = closestContainer.transform.position;
             }
+
+            GameController.dropCard();
         }
+        this.canvasGroup.blocksRaycasts = true;
     }
 
 

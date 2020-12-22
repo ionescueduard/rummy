@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     static private Card[] cardsToIdentifyByIndex = new Card[106];
     static private Card[] cardsToDrawFrom = new Card[106];
     static private int cardsCurrentIndex = 0;
+    static private bool cardPicked;
 
     static private int containersNumber = 32;
     static private Container[] containers = new Container[containersNumber];
@@ -30,9 +31,22 @@ public class GameController : MonoBehaviour
     static private bool playerSwitched = false;
 
     static private Arrow[,,] arrows = new Arrow[4, 5, 2];
+    static private StickPointer[,,] stickPointers = new StickPointer[4, 5, 2];
 
     static private Random rng = new Random();
 
+
+    public enum ShiftDirection : int
+    {
+        Left = -1,
+        Right = 1
+    }
+
+    public enum SidePosition : int
+    {
+        Left = 0,
+        Right = 1
+    }
 
 
     /*--------------------------*/
@@ -81,10 +95,28 @@ public class GameController : MonoBehaviour
 
 
 
+    /*--------------------------*/
+    /*--------- Logic ----------*/
+    /*------------------------*/
+    static private void ShuffleCards()
+    {
+        int n = 106;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            Card tmp = cardsToDrawFrom[k];
+            cardsToDrawFrom[k] = cardsToDrawFrom[n];
+            cardsToDrawFrom[n] = tmp;
+        }
+    }
+
+
 
     /*--------------------------*/
     /*--------- Card ----------*/
     /*------------------------*/
+
     static private Card[] getCardsPack()
     {
         return cardsToDrawFrom; //decide which card pack
@@ -98,6 +130,12 @@ public class GameController : MonoBehaviour
     }
 
     static public Card getCard(int index) { return cardsToIdentifyByIndex[index]; }
+
+    static public void pickCard() { cardPicked = true; }
+
+    static public void dropCard() { cardPicked = false; }
+
+    static public bool isCardPicked() { return cardPicked; }
 
 
 
@@ -146,23 +184,24 @@ public class GameController : MonoBehaviour
 
     static public void activateArrows(int player, int row)
     {
-        arrows[player, row, 0].gameObject.SetActive(true);
-        arrows[player, row, 1].gameObject.SetActive(true);
+        arrows[player, row, (int)SidePosition.Left].gameObject.SetActive(true);
+        arrows[player, row, (int)SidePosition.Right].gameObject.SetActive(true);
     }
 
 
 
-    static private void ShuffleCards()
+    /*--------------------------*/
+    /*----- StickPointer ------*/
+    /*------------------------*/
+    static public void addStickPointer(StickPointer stickPointer, int player, int row, int side)
     {
-        int n = 106;
-        while (n > 1)
-        {
-            n--;
-            int k = rng.Next(n + 1);
-            Card tmp = cardsToDrawFrom[k];
-            cardsToDrawFrom[k] = cardsToDrawFrom[n];
-            cardsToDrawFrom[n] = tmp;
-        }
+        stickPointers[player, row, side] = stickPointer;
+        stickPointer.gameObject.SetActive(false);
+    }
+
+    static public void activateStickPointer(bool value, int player, int row, int side)
+    {
+        stickPointers[player, row, side].gameObject.SetActive(value);
     }
 
 
