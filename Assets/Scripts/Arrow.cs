@@ -4,10 +4,20 @@ using UnityEngine.UI;
 
 public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    private Image image;
     private int panelIndex;
     private int pairIndex;
     private GameController.SidePosition side; /// 0 for Left Arrow, 1 for Right Arrow,
     private GameController.ShiftDirection direction; /// direction in which pair moves. multiplying with -1 means moving Left, and with 1 moving Right
+
+    private Color visibleColor = new Color(255, 255, 255, 255);
+    private Color invisibleColor = new Color(255, 255, 255, 0);
+
+    static public float RIGHT_ARROW_INITIAL_X = 60.22f;
+    /*
+     * Position local space:   -175.48   60.22   117.46   174.7
+     * Distance between two arrows in local space: 57.24
+     */
 
 
     /*--------------------------*/
@@ -15,10 +25,12 @@ public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     /*------------------------*/
     public void OnPointerDown(PointerEventData eventData)
     {
+        Debug.Log("OnPointerDown");
         GameController.getCurrentPlayer().shiftCardsForPair(this.pairIndex, this.direction);
     }
 
     public void OnPointerEnter(PointerEventData eventData) /// TODO it's not triggered for a picked card that is picked after moved on the board (for cards from original position, it is triggered)
+        /// TODO also, currently appending cards work only for current player, exted to other players
     {
         Debug.Log("OnPointerEnter");
         if (GameController.isCardPicked() && !GameController.getCurrentPlayer().canPairShift(this.pairIndex, this.direction))
@@ -53,6 +65,8 @@ public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     {
         init();
 
+        this.image = this.GetComponent<Image>();
+
         GameController.addArrow(this, this.panelIndex, this.pairIndex, (int)this.side);
     }
 
@@ -61,6 +75,8 @@ public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     /*--------------------------*/
     /*--------- Utils ---------*/
     /*------------------------*/
+    public void setVisible(bool state) { this.image.color = state ? visibleColor : invisibleColor; }
+
     public int getPanelIndex() { return this.panelIndex; }
 
     public int getPairIndex() { return this.pairIndex; }

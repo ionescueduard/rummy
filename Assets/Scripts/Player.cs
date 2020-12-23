@@ -17,9 +17,9 @@ public class Player : MonoBehaviour
     private Card lowerSpecial; //TODO
 
     private List<List<Card>> cardsOnTable = new List<List<Card>>();
-    static private int NUMBER_OF_CARDS_IN_PAIR = 5;
-    static private int NUMBER_OF_PAIRS = 5;
-    private int[] currentFirstInPair = new int[NUMBER_OF_CARDS_IN_PAIR];
+    static public int MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE = 5;
+    static public int MAX_NUMBER_OF_PAIRS_VISIBLE = 5;
+    private int[] currentFirstInPair = new int[MAX_NUMBER_OF_PAIRS_VISIBLE];
     
 
 
@@ -196,8 +196,9 @@ public class Player : MonoBehaviour
         }
 
         currentFirstInPair[row] = 0;
-        if (pair.Count > 5)
-            GameController.activateArrows(this.index, row);
+
+        GameController.initializeArrows(this.index, row, pair.Count);
+        GameController.initializeStickPointer(this.index, row, pair.Count);
     }
 
     private void removePairFromTable(List<Card> pair)
@@ -291,8 +292,9 @@ public class Player : MonoBehaviour
     /*-----------------------------*/
     public bool canPairShift(int pairIndex, GameController.ShiftDirection direction)
     {
+        //if (cardsOnTable[pairIndex] > 5) /// i think this condition not needed
         if (direction == GameController.ShiftDirection.Left)
-            return currentFirstInPair[pairIndex] + cardsOnTable[pairIndex].Count > NUMBER_OF_CARDS_IN_PAIR;
+            return currentFirstInPair[pairIndex] + cardsOnTable[pairIndex].Count > MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE;
         return currentFirstInPair[pairIndex] < 0;
     }
 

@@ -8,6 +8,12 @@ public class StickPointer : MonoBehaviour
     private int pairIndex;
     private GameController.SidePosition side; /// 0 for Left Arrow, 1 for Right Arrow,
 
+    static public float RIGHT_STICKPOINTER_INITIAL_X = -11.48f;
+
+    /*
+     * Position local space:   103  -11.48  45.76  102.2182
+     * Distance between two arrows in local space: 57.24
+     */
 
     /*--------------------------*/
     /*----- Initialization ----*/

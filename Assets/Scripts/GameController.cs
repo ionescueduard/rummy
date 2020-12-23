@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
 
     static private Random rng = new Random();
 
+    static public float DISTANCE_BETWEEN_TWO_OBJECTS_LOCAL_SPACE = 57.24f;
 
     public enum ShiftDirection : int
     {
@@ -188,6 +189,23 @@ public class GameController : MonoBehaviour
         arrows[player, row, (int)SidePosition.Right].gameObject.SetActive(true);
     }
 
+    static public void initializeArrows(int player, int row, int pairCount)
+    {
+        Arrow[] ar = { arrows[player, row, (int)SidePosition.Left], arrows[player, row, (int)SidePosition.Right] };
+
+        ar[0].setVisible(pairCount > Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE);  /// make visible for shifting if pair longer than max and if not, no need for shifting,
+        ar[1].setVisible(pairCount > Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE);  /// active, but invisible, only to get mouseEnter/Exit for appending cards to the pairs
+
+        /// ar[0] never moves
+        int arPositionIndex = Math.Min(Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE, pairCount) - 3;
+        float x = Arrow.RIGHT_ARROW_INITIAL_X + arPositionIndex * DISTANCE_BETWEEN_TWO_OBJECTS_LOCAL_SPACE;
+        ar[1].transform.localPosition = new Vector3(x, ar[1].transform.localPosition.y, 0);
+
+        ar[0].gameObject.SetActive(true);
+        ar[1].gameObject.SetActive(true);
+    }
+
+
 
 
     /*--------------------------*/
@@ -202,6 +220,14 @@ public class GameController : MonoBehaviour
     static public void activateStickPointer(bool value, int player, int row, int side)
     {
         stickPointers[player, row, side].gameObject.SetActive(value);
+    }
+
+    static public void initializeStickPointer(int player, int row, int pairCount)
+    {
+        /// sp[0] never moves
+        int spPositionIndex = Math.Min(Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE, pairCount) - 3;
+        float x = StickPointer.RIGHT_STICKPOINTER_INITIAL_X + spPositionIndex * DISTANCE_BETWEEN_TWO_OBJECTS_LOCAL_SPACE;
+        stickPointers[player, row, (int)SidePosition.Right].transform.localPosition = new Vector3(x, stickPointers[player, row, (int)SidePosition.Right].transform.localPosition.y, 0);
     }
 
 
