@@ -155,6 +155,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 this.rectTransform.position = closestContainer.transform.position;
             }
 
+            GameController.deactivateStickPointerByObject();
             GameController.dropCard();
         }
         this.canvasGroup.blocksRaycasts = true;

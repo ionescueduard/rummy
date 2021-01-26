@@ -2,12 +2,12 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class HorizontalArrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Image image;
-    private int panelIndex;
+    private int panelIndex; // coresponds to player index
     private int pairIndex;
-    private GameController.SidePosition side; /// 0 for Left Arrow, 1 for Right Arrow,
+    private GameController.SidePosition side; /// 0 for Left HorizontalArrow, 1 for Right HorizontalArrow,
     private GameController.ShiftDirection direction; /// direction in which pair moves. multiplying with -1 means moving Left, and with 1 moving Right
 
     private Color visibleColor = new Color(255, 255, 255, 255);
@@ -26,14 +26,21 @@ public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("OnPointerDown");
-        GameController.getCurrentPlayer().shiftCardsForPair(this.pairIndex, this.direction);
+        bool canShiftAgain = GameController.getPlayer(this.panelIndex).shiftCardsForPair(this.pairIndex, this.direction);
+        /// make opposite arrow active, as it can be a valid action to shift pair backwards
+        makeOpositeVisible();
+
+        if (!canShiftAgain)
+        {
+            this.setVisible(false);
+        }
+
     }
 
     public void OnPointerEnter(PointerEventData eventData) /// TODO it's not triggered for a picked card that is picked after moved on the board (for cards from original position, it is triggered)
-        /// TODO also, currently appending cards work only for current player, exted to other players
     {
         Debug.Log("OnPointerEnter");
-        if (GameController.isCardPicked() && !GameController.getCurrentPlayer().canPairShift(this.pairIndex, this.direction))
+        if (GameController.isCardPicked() && !GameController.getPlayer(this.panelIndex).canPairShift(this.pairIndex, this.direction))
         {
             GameController.activateStickPointer(true, this.panelIndex, this.pairIndex, (int)this.side);
         }
@@ -42,7 +49,7 @@ public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     public void OnPointerExit(PointerEventData eventData)
     {
         Debug.Log("OnPointerExit");
-        if (GameController.isCardPicked() && !GameController.getCurrentPlayer().canPairShift(this.pairIndex, this.direction))
+        if (GameController.isCardPicked() && !GameController.getPlayer(this.panelIndex).canPairShift(this.pairIndex, this.direction))
         {
             GameController.activateStickPointer(false, this.panelIndex, this.pairIndex, (int)this.side);
         }
@@ -67,7 +74,7 @@ public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
 
         this.image = this.GetComponent<Image>();
 
-        GameController.addArrow(this, this.panelIndex, this.pairIndex, (int)this.side);
+        GameController.addHorizontalArrow(this, this.panelIndex, this.pairIndex, (int)this.side);
     }
 
 
@@ -75,6 +82,11 @@ public class Arrow : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, I
     /*--------------------------*/
     /*--------- Utils ---------*/
     /*------------------------*/
+    private void makeOpositeVisible()
+    {
+        GameController.setHorizontalArrowVisiblity(this.panelIndex, this.pairIndex, this.side == GameController.SidePosition.Left ? GameController.SidePosition.Right : GameController.SidePosition.Left, true);
+    }
+
     public void setVisible(bool state) { this.image.color = state ? visibleColor : invisibleColor; }
 
     public int getPanelIndex() { return this.panelIndex; }

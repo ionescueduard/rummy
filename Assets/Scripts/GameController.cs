@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
                                                 {  20.0f,   30.6f,   41.2f,   51.8f,  62.4f },
                                                 {  98.5f,  109.1f,  119.7f,  130.3f, 140.9f } };
     static public float xTableFormationsGap = 10.6f;
+    static public float yTableFormationsGap = 14.8f;
 
 
     static private Card[] cardsToIdentifyByIndex = new Card[106];
@@ -30,8 +31,10 @@ public class GameController : MonoBehaviour
     static private int currentPlayer;
     static private bool playerSwitched = false;
 
-    static private Arrow[,,] arrows = new Arrow[4, 5, 2];
+    static private HorizontalArrow[,,] horizontalArrows = new HorizontalArrow[4, 5, 2];
+    static private VerticalArrow[,] verticalArrows = new VerticalArrow[4, 2];
     static private StickPointer[,,] stickPointers = new StickPointer[4, 5, 2];
+    static private StickPointer lastActiveStickPointer;
 
     static private Random rng = new Random();
 
@@ -50,6 +53,8 @@ public class GameController : MonoBehaviour
     }
 
 
+
+
     /*--------------------------*/
     /*--------- Frame ---------*/
     /*------------------------*/
@@ -64,7 +69,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < players.Count; i++)
         {
             bool first = i == 0;
-            numToAdd = first ? 15 : 14;
+            numToAdd = first ? 28 : 14;
             init.Clear();
             for (int j = 0; j < numToAdd; j++)
             {
@@ -96,6 +101,7 @@ public class GameController : MonoBehaviour
 
 
 
+
     /*--------------------------*/
     /*--------- Logic ----------*/
     /*------------------------*/
@@ -111,6 +117,7 @@ public class GameController : MonoBehaviour
             cardsToDrawFrom[n] = tmp;
         }
     }
+    
 
 
 
@@ -140,6 +147,7 @@ public class GameController : MonoBehaviour
 
 
 
+
     /*--------------------------*/
     /*------- Container -------*/
     /*------------------------*/
@@ -155,6 +163,7 @@ public class GameController : MonoBehaviour
 
 
 
+
     /*--------------------------*/
     /*-------- Player ---------*/
     /*------------------------*/
@@ -165,6 +174,11 @@ public class GameController : MonoBehaviour
 
     static public Player getCurrentPlayer() { return players[currentPlayer]; }
 
+    static public Player getPlayer(int index)
+    {
+        return players[index];
+    }
+
     static private void nextPlayerIndex() { currentPlayer = (currentPlayer + 1) % players.Count; }
 
     static private void sortPlayers()
@@ -174,35 +188,82 @@ public class GameController : MonoBehaviour
 
 
 
+
     /*--------------------------*/
-    /*--------- Arrow ---------*/
+    /*---- VerticalArrow ----*/
     /*------------------------*/
-    static public void addArrow(Arrow arrow, int player, int row, int side)
+    internal static void addVerticalArrow(VerticalArrow arrow, int player, int side)
     {
-        arrows[player, row, side] = arrow;
+        verticalArrows[player, side] = arrow;
         arrow.gameObject.SetActive(false);
     }
 
-    static public void activateArrows(int player, int row)
+    static public void initializeVerticalArrows(int player, int pairsCount)
     {
-        arrows[player, row, (int)SidePosition.Left].gameObject.SetActive(true);
-        arrows[player, row, (int)SidePosition.Right].gameObject.SetActive(true);
+        VerticalArrow[] ar = { verticalArrows[player, (int)SidePosition.Left], verticalArrows[player, (int)SidePosition.Right] };
+
+        bool morePairsThenMaxSpace = pairsCount > Player.MAX_NUMBER_OF_PAIRS_VISIBLE; /// make active for shifting if more pairs then max max and if not, no need for shifting,
+
+        ar[0].gameObject.SetActive(false); /// ar[0] will be made active when shift action will be possible (meaning after first up shift)
+        ar[1].gameObject.SetActive(morePairsThenMaxSpace);
     }
 
-    static public void initializeArrows(int player, int row, int pairCount)
+    internal static void setVerticalArrowVisiblity(int player, SidePosition side, bool visible)
     {
-        Arrow[] ar = { arrows[player, row, (int)SidePosition.Left], arrows[player, row, (int)SidePosition.Right] };
+        verticalArrows[player, (int)side].gameObject.SetActive(visible);
+    }
 
-        ar[0].setVisible(pairCount > Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE);  /// make visible for shifting if pair longer than max and if not, no need for shifting,
-        ar[1].setVisible(pairCount > Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE);  /// active, but invisible, only to get mouseEnter/Exit for appending cards to the pairs
+
+
+
+    /*--------------------------*/
+    /*---- HorizontalArrow ----*/
+    /*------------------------*/
+    static public void addHorizontalArrow(HorizontalArrow arrow, int player, int row, int side)
+    {
+        horizontalArrows[player, row, side] = arrow;
+        arrow.gameObject.SetActive(false);
+    }
+
+    static public void initializeHorizontalArrows(int player, int row, int pairCount)
+    {
+        HorizontalArrow[] ar = { horizontalArrows[player, row, (int)SidePosition.Left], horizontalArrows[player, row, (int)SidePosition.Right] };
+
+        bool pairLongerThenMaxSpace = pairCount > Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE; /// make visible for shifting if pair longer than max and if not, no need for shifting,
+                                                                                              /// active, but invisible, only to get mouseEnter/Exit for appending cards to the pairs
+        ar[0].setVisible(false); /// ar[0] will be made visible when shift action will be possible (meaning after first left shift)
+        ar[1].setVisible(pairLongerThenMaxSpace);
 
         /// ar[0] never moves
         int arPositionIndex = Math.Min(Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE, pairCount) - 3;
-        float x = Arrow.RIGHT_ARROW_INITIAL_X + arPositionIndex * DISTANCE_BETWEEN_TWO_OBJECTS_LOCAL_SPACE;
+        float x = HorizontalArrow.RIGHT_ARROW_INITIAL_X + arPositionIndex * DISTANCE_BETWEEN_TWO_OBJECTS_LOCAL_SPACE;
         ar[1].transform.localPosition = new Vector3(x, ar[1].transform.localPosition.y, 0);
 
         ar[0].gameObject.SetActive(true);
         ar[1].gameObject.SetActive(true);
+    }
+
+    static public void reinitializeHorizontalArrows(int player, List<List<Card>> pairs, List<int> currentFirstInPair, int startFromPair)
+    {
+        int i = startFromPair;
+        int n = startFromPair + Player.MAX_NUMBER_OF_PAIRS_VISIBLE;
+        for (int j = 0; i < n; i++, j++)
+        {
+            HorizontalArrow[] ar = { horizontalArrows[player, j, (int)SidePosition.Left], horizontalArrows[player, j, (int)SidePosition.Right] };
+
+            ar[0].setVisible(currentFirstInPair[i] < 0);
+            ar[1].setVisible(currentFirstInPair[i] + pairs[i].Count > Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE);
+
+            /// ar[0] never moves
+            int arPositionIndex = Math.Min(Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE, pairs[i].Count) - 3;
+            float x = HorizontalArrow.RIGHT_ARROW_INITIAL_X + arPositionIndex * DISTANCE_BETWEEN_TWO_OBJECTS_LOCAL_SPACE;
+            ar[1].transform.localPosition = new Vector3(x, ar[1].transform.localPosition.y, 0);
+        }
+    }
+
+    static public void setHorizontalArrowVisiblity(int player, int row, SidePosition side, bool visible)
+    {
+        horizontalArrows[player, row, (int)side].setVisible(visible);
     }
 
 
@@ -220,6 +281,15 @@ public class GameController : MonoBehaviour
     static public void activateStickPointer(bool value, int player, int row, int side)
     {
         stickPointers[player, row, side].gameObject.SetActive(value);
+        lastActiveStickPointer = stickPointers[player, row, side];
+    }
+
+    static public void deactivateStickPointerByObject()
+    {
+        if (lastActiveStickPointer != null)
+        {
+            lastActiveStickPointer.gameObject.SetActive(false);
+        }
     }
 
     static public void initializeStickPointer(int player, int row, int pairCount)
@@ -228,6 +298,19 @@ public class GameController : MonoBehaviour
         int spPositionIndex = Math.Min(Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE, pairCount) - 3;
         float x = StickPointer.RIGHT_STICKPOINTER_INITIAL_X + spPositionIndex * DISTANCE_BETWEEN_TWO_OBJECTS_LOCAL_SPACE;
         stickPointers[player, row, (int)SidePosition.Right].transform.localPosition = new Vector3(x, stickPointers[player, row, (int)SidePosition.Right].transform.localPosition.y, 0);
+    }
+
+    static public void reinitializeStickPointers(int player, List<List<Card>> pairs, List<int> currentFirstInPair, int startFromPair)
+    {
+        int i = startFromPair;
+        int n = startFromPair + Player.MAX_NUMBER_OF_PAIRS_VISIBLE;
+        for (int j = 0; i < n; i++, j++)
+        {
+            /// sp[0] never moves
+            int spPositionIndex = Math.Min(Player.MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE, pairs[i].Count) - 3;
+            float x = StickPointer.RIGHT_STICKPOINTER_INITIAL_X + spPositionIndex * DISTANCE_BETWEEN_TWO_OBJECTS_LOCAL_SPACE;
+            stickPointers[player, j, (int)SidePosition.Right].transform.localPosition = new Vector3(x, stickPointers[player, j, (int)SidePosition.Right].transform.localPosition.y, 0);
+        }
     }
 
 

@@ -6,7 +6,7 @@ public class StickPointer : MonoBehaviour
 {
     private int panelIndex;
     private int pairIndex;
-    private GameController.SidePosition side; /// 0 for Left Arrow, 1 for Right Arrow,
+    private GameController.SidePosition side; /// 0 for Left StickPointer, 1 for Right StickPointer,
 
     static public float RIGHT_STICKPOINTER_INITIAL_X = -11.48f;
 

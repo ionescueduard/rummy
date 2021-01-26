@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private GameObject panelToPlace;
-    private int index;
+    private int index; /// player's index, the index is always from 0 to 3 in order as on board
 
     static private int NUMBER_OF_CARDS_PER_ROW = 16;
     static private int NUMBER_OR_ROWS = 2;
@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     private List<List<Card>> cardsOnTable = new List<List<Card>>();
     static public int MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE = 5;
     static public int MAX_NUMBER_OF_PAIRS_VISIBLE = 5;
-    private int[] currentFirstInPair = new int[MAX_NUMBER_OF_PAIRS_VISIBLE];
+    private List<int> currentFirstInPair = new List<int>(); //[MAX_NUMBER_OF_PAIRS_VISIBLE];
+    private int currentFirstOnTable;
     
 
 
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
         init();
         GameController.addPlayer(this);
     }
+
 
 
 
@@ -181,27 +183,33 @@ public class Player : MonoBehaviour
     }
 
 
+
+
     /*-------------Pairs-------------*/
     /*--------- Pairs Placement ----*/
     /*-----------------------------*/
-    private void placePairOnRow(List<Card> pair, int row)
+    private void placePairOnTable(List<Card> pair, int row)
     {
         float cardXPosition = GameController.xTableFormations[this.index, 0];
+        float cardYPosition = GameController.yTableFormations[0];
         for (int x = 0; x < pair.Count; x++, cardXPosition += GameController.xTableFormationsGap)
         {
             // on table scale: 0.795
             pair[x].transform.localScale = new Vector3(0.795f, 0.795f, 0);
-            pair[x].transform.position = new Vector3(cardXPosition, GameController.yTableFormations[row], 0);
+            pair[x].transform.position = new Vector3(cardXPosition, cardYPosition - row * GameController.yTableFormationsGap, 0);
             pair[x].transform.SetParent(panelToPlace.transform);
         }
 
-        currentFirstInPair[row] = 0;
+        currentFirstInPair.Add(0);
 
-        GameController.initializeArrows(this.index, row, pair.Count);
-        GameController.initializeStickPointer(this.index, row, pair.Count);
+        if (row < MAX_NUMBER_OF_PAIRS_VISIBLE)
+        {
+            GameController.initializeHorizontalArrows(this.index, row, pair.Count);
+            GameController.initializeStickPointer(this.index, row, pair.Count);
+        }
     }
 
-    private void removePairFromTable(List<Card> pair)
+    private void removePairFromBoard(List<Card> pair)
     {
         foreach (Card card in pair)
         {
@@ -219,11 +227,16 @@ public class Player : MonoBehaviour
         List<List<Card>> pairs = getPairs();
         foreach (List<Card> pair in pairs)
         {
-            removePairFromTable(pair);
-            placePairOnRow(pair, cardsOnTable.Count);
+            removePairFromBoard(pair);
+            placePairOnTable(pair, cardsOnTable.Count);
             cardsOnTable.Add(pair);
         }
+        currentFirstOnTable = 0;
+        GameController.initializeVerticalArrows(this.index, cardsOnTable.Count);
+
     }
+
+
 
 
     /*-------------Pairs-------------*/
@@ -287,26 +300,61 @@ public class Player : MonoBehaviour
     }
 
 
+
+
     /*-------------Pairs-------------*/
     /*--------- Pairs Shift --------*/
     /*-----------------------------*/
     public bool canPairShift(int pairIndex, GameController.ShiftDirection direction)
     {
-        //if (cardsOnTable[pairIndex] > 5) /// i think this condition not needed
+        int pairIndexTransformedToVisible = pairIndex - currentFirstOnTable;
         if (direction == GameController.ShiftDirection.Left)
-            return currentFirstInPair[pairIndex] + cardsOnTable[pairIndex].Count > MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE;
-        return currentFirstInPair[pairIndex] < 0;
+            return currentFirstInPair[pairIndexTransformedToVisible] + cardsOnTable[pairIndexTransformedToVisible].Count > MAX_NUMBER_OF_CARDS_IN_PAIR_VISIBLE;
+        return currentFirstInPair[pairIndexTransformedToVisible] < 0;
+    }
+    
+    public bool canPairsShift(GameController.ShiftDirection direction)
+    {
+        /// Direction -> Left means Down, Right means Up
+        if (direction == GameController.ShiftDirection.Right)
+            return currentFirstOnTable + cardsOnTable.Count > MAX_NUMBER_OF_PAIRS_VISIBLE;
+        return currentFirstOnTable < 0;
     }
 
-    public void shiftCardsForPair(int pairIndex, GameController.ShiftDirection direction)
+    /*
+     * returns wether pair can be shifted again.
+     * information used to make the arrow visible/invisible
+     */
+    public bool shiftCardsForPair(int pairIndex, GameController.ShiftDirection direction)
     {
+        int pairIndexTransformedToVisible = pairIndex - currentFirstOnTable;
         if (canPairShift(pairIndex, direction))
         {
-            currentFirstInPair[pairIndex] += (int)direction;
-            foreach (Card card in cardsOnTable[pairIndex])
+            currentFirstInPair[pairIndexTransformedToVisible] += (int)direction;
+            foreach (Card card in cardsOnTable[pairIndexTransformedToVisible])
                 card.transform.position = new Vector3(card.transform.position.x + (int)direction * GameController.xTableFormationsGap, card.transform.position.y, 0);
         }
+
+        return canPairShift(pairIndex, direction); 
     }
+
+    public bool shiftPairs(GameController.ShiftDirection direction)
+    {
+        /// Direction -> Left means Down, Right means Up
+        if (canPairsShift(direction))
+        {
+            currentFirstOnTable += -(int)direction;
+            foreach (List<Card> pair in cardsOnTable)
+                foreach (Card card in pair)
+                    card.transform.position = new Vector3(card.transform.position.x, card.transform.position.y + (int)direction * GameController.yTableFormationsGap, 0);
+        }
+
+        GameController.reinitializeHorizontalArrows(this.index, cardsOnTable, currentFirstInPair, -currentFirstOnTable);
+        GameController.reinitializeStickPointers(this.index, cardsOnTable, currentFirstInPair, -currentFirstOnTable);
+
+        return canPairsShift(direction);
+    }
+
 
 
 
@@ -328,6 +376,7 @@ public class Player : MonoBehaviour
 
 
 
+
     /*-------------Board-------------*/
     /*--------- Board Edits --------*/
     /*-----------------------------*/
@@ -342,7 +391,20 @@ public class Player : MonoBehaviour
         }
         if (first)
         {
-            addCardOnBoardAt(0, j, cards[i]);
+            addCardOnBoardAt(0, j, cards[i++]);
+            addCardOnBoardAt(1, j++, cards[i++]);
+            addCardOnBoardAt(0, j, cards[i++]);
+            addCardOnBoardAt(1, j++, cards[i++]);
+            addCardOnBoardAt(0, j, cards[i++]);
+            addCardOnBoardAt(1, j++, cards[i++]);
+            addCardOnBoardAt(0, j, cards[i++]);
+            addCardOnBoardAt(1, j++, cards[i++]);
+            addCardOnBoardAt(0, j, cards[i++]);
+            addCardOnBoardAt(1, j++, cards[i++]);
+            addCardOnBoardAt(0, j, cards[i++]);
+            addCardOnBoardAt(1, j++, cards[i++]);
+            addCardOnBoardAt(0, j, cards[i++]);
+            addCardOnBoardAt(1, j, cards[i]);
         }  
     }
 
@@ -365,6 +427,7 @@ public class Player : MonoBehaviour
         card.transform.position = new Vector3(GameController.xBoardPositions[x], GameController.yBoardPositions[y], 0);
         card.setMovable(true);
     }
+
 
 
 
